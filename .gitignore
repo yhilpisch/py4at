@@ -2,7 +2,7 @@
 dx/
 *.swp
 _build/
-*.cfg
+# *.cfg
 .DS_Store
 source/
 # Byte-compiled / optimized / DLL files
