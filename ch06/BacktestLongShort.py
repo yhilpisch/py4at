@@ -1,6 +1,6 @@
 #
 # Python Script with Long Short Class
-# for Event-based Backtesting
+# for Event-Based Backtesting
 #
 # Python for Algorithmic Trading
 # (c) Dr. Yves J. Hilpisch
@@ -114,7 +114,7 @@ if __name__ == '__main__':
         lsbt.run_sma_strategy(42, 252)
         lsbt.run_momentum_strategy(60)
         lsbt.run_mean_reversion_strategy(50, 5)
-    lsbt = BacktestLongShort('EUR=', '2010-1-1', '2019-12-31', 10000,
+    lsbt = BacktestLongShort('AAPL.O', '2010-1-1', '2019-12-31', 10000,
                              verbose=False)
     run_strategies()
     # transaction costs: 10 USD fix, 1% variable

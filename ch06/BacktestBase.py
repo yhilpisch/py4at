@@ -1,6 +1,6 @@
 #
 # Python Script with Base Class
-# for Event-based Backtesting
+# for Event-Based Backtesting
 #
 # Python for Algorithmic Trading
 # (c) Dr. Yves J. Hilpisch
@@ -42,7 +42,7 @@ class BacktestBase(object):
     print_balance:
         prints out the current (cash) balance
     print_net_wealth:
-        prints auf the current net wealth
+        prints out the current net wealth
     place_buy_order:
         places a buy order
     place_sell_order:
@@ -82,7 +82,7 @@ class BacktestBase(object):
         '''
         if cols is None:
             cols = ['price']
-        self.data['price'].plot(figsize=(10, 6), title=self.symbol)
+        self.data[cols].plot(figsize=(10, 6), title=self.symbol)
 
     def get_date_price(self, bar):
         ''' Return date and price for bar.
@@ -114,7 +114,7 @@ class BacktestBase(object):
         self.units += units
         self.trades += 1
         if self.verbose:
-            print(f'{date} | selling {units} units at {price:.2f}')
+            print(f'{date} | buying {units} units at {price:.2f}')
             self.print_balance(bar)
             self.print_net_wealth(bar)
 
@@ -146,7 +146,7 @@ class BacktestBase(object):
         perf = ((self.amount - self.initial_amount) /
                 self.initial_amount * 100)
         print('Net Performance [%] {:.2f}'.format(perf))
-        print('Trades Executed [#] {:.2f}'.format(self.trades))
+        print('Trades Executed [#] {}'.format(self.trades))
         print('=' * 55)
 
 
