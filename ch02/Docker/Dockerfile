@@ -9,17 +9,17 @@
 #
 
 # latest Ubuntu version
-FROM ubuntu:latest  
+FROM ubuntu:latest  AS builder
 
 # information about maintainer
 MAINTAINER yves
 
 # add the bash script
-ADD install.sh /
+ADD /install.sh /runfolder/
 # change rights for the script
-RUN chmod u+x /install.sh
+RUN chmod u+x /runfolder/install.sh
 # run the bash script
-RUN /install.sh
+RUN /runfolder/install.sh
 # prepend the new path
 ENV PATH /root/miniconda3/bin:$PATH
 
