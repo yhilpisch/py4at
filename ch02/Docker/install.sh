@@ -27,6 +27,8 @@ export PATH="/root/miniconda3/bin:$PATH"  # prepends the new path
 # INSTALL PYTHON LIBRARIES
 conda install -y pandas  # installs pandas
 conda install -y ipython  # installs IPython shell
+conda install -y scipy #from scipy.optimize import brute
+conda install -y pylap #Plotting grafic
 
 # CUSTOMIZATION
 #cd /root/

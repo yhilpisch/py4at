@@ -12,6 +12,7 @@ import pandas as pd
 from scipy.optimize import brute
 
 
+
 class SMAVectorBacktester(object):
     ''' Class for the vectorized backtesting of SMA-based trading strategies.
 
