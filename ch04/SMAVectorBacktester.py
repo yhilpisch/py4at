@@ -58,13 +58,14 @@ class SMAVectorBacktester(object):
         ''' Retrieves and prepares the data.
         '''
         raw = pd.read_csv('http://hilpisch.com/pyalgo_eikon_eod_data.csv',
-                          index_col=0, parse_dates=True).dropna()
+                          index_col=0, parse_dates=True).dropna() # dropna means that all NaN types raws will remove
         raw = pd.DataFrame(raw[self.symbol])
         raw = raw.loc[self.start:self.end]
         raw.rename(columns={self.symbol: 'price'}, inplace=True)
-        raw['return'] = np.log(raw / raw.shift(1))
-        raw['SMA1'] = raw['price'].rolling(self.SMA1).mean()
-        raw['SMA2'] = raw['price'].rolling(self.SMA2).mean()
+        raw['return'] = np.log(raw / raw.shift(1)) # # calculate the growing rate from div of price and shifted
+        # ( last) price, with that it is easy to multiply your stake ( normalized ). see math_play.py
+        raw['SMA1'] = raw['price'].rolling(self.SMA1).mean() # Rolling Window means to move the row down on ... steps
+        raw['SMA2'] = raw['price'].rolling(self.SMA2).mean() # mean is the middle ( approximation )
         self.data = raw
 
     def set_parameters(self, SMA1=None, SMA2=None):
@@ -72,7 +73,7 @@ class SMAVectorBacktester(object):
         '''
         if SMA1 is not None:
             self.SMA1 = SMA1
-            self.data['SMA1'] = self.data['price'].rolling(
+            self.data['SMA1'] = self.data['price'].rolling(  # Rolling Window means to move the row down on ... steps
                 self.SMA1).mean()
         if SMA2 is not None:
             self.SMA2 = SMA2
@@ -81,12 +82,16 @@ class SMAVectorBacktester(object):
     def run_strategy(self):
         ''' Backtests the trading strategy.
         '''
-        data = self.data.copy().dropna()
+        data = self.data.copy().dropna() # remove NaN Rows
         data['position'] = np.where(data['SMA1'] > data['SMA2'], 1, -1)
-        data['strategy'] = data['position'].shift(1) * data['return']
+        data['strategy'] = data['position'].shift(1) * data['return'] # Derives the log returns of the strategy given
+        # the positionings and market returns
         data.dropna(inplace=True)
-        data['creturns'] = data['return'].cumsum().apply(np.exp)
-        data['cstrategy'] = data['strategy'].cumsum().apply(np.exp)
+        data['creturns'] = data['return'].cumsum().apply(np.exp) # sums up the single log returns values for the stock
+        #  ( for illustration only )
+        data['cstrategy'] = data['strategy'].cumsum().apply(np.exp) # sums up the signle log returns values for  the
+        # strategy ( for illustration only )
+        # apply(np.exp) for the gross performance
         self.results = data
         # gross performance of the strategy
         aperf = data['cstrategy'].iloc[-1]
@@ -133,6 +138,8 @@ if __name__ == '__main__':
     smabt = SMAVectorBacktester('EUR=', 42, 252,
                                 '2010-1-1', '2020-12-31')
     print(smabt.run_strategy())
+    smabt.plot_results()
+
     smabt.set_parameters(SMA1=20, SMA2=100)
     print(smabt.run_strategy())
     print(smabt.optimize_parameters((30, 56, 4), (200, 300, 4)))

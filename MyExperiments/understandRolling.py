@@ -21,4 +21,3 @@ mpl.use('TkAgg')
 plt.text = "all Rollings"
 data.plot()
 plt.show()
-plt
