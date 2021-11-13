@@ -13,7 +13,7 @@ r = 0.05  # constant short rate
 sigma = 0.5  # volatility factor
 
 
-def generate_sample_data(rows, cols, freq='1min'):
+def generate_sample_data(rows, cols, freq='1min') -> pd.DataFrame:
     '''
     Function to generate sample financial data.
 
