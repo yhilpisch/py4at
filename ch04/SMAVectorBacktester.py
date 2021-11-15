@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import brute
 
-
+testresult = pd.DataFrame()
 
 class SMAVectorBacktester(object):
     ''' Class for the vectorized backtesting of SMA-based trading strategies.
@@ -63,7 +63,8 @@ class SMAVectorBacktester(object):
         raw = raw.loc[self.start:self.end]
         raw.rename(columns={self.symbol: 'price'}, inplace=True)
         raw['return'] = np.log(raw / raw.shift(1)) # # calculate the growing rate from div of price and shifted
-        # ( last) price, with that it is easy to multiply your stake ( normalized ). see math_play.py
+        # ( last) price, with that it is easy to add (+) your stake ( normalized ). see math_play.py
+        # Durch den Logaritmus lässt sich der Wachstumswert addieren! würde sonst nicht gehen, muss aber dann später wieder exponiert werden
         raw['SMA1'] = raw['price'].rolling(self.SMA1).mean() # Rolling Window means to move the row down on ... steps
         raw['SMA2'] = raw['price'].rolling(self.SMA2).mean() # mean is the middle ( approximation )
         self.data = raw
@@ -88,16 +89,23 @@ class SMAVectorBacktester(object):
         # the positionings and market returns
         data.dropna(inplace=True)
         data['creturns'] = data['return'].cumsum().apply(np.exp) # sums up the single log returns values for the stock
+        testresult[self.SMA1] = data['creturns']
         #  ( for illustration only )
+        # np.cumsum is the summ cell for cell
         data['cstrategy'] = data['strategy'].cumsum().apply(np.exp) # sums up the signle log returns values for  the
-        # strategy ( for illustration only )
+        # strategy ( for illustration only ). log and back with exp because of additive ability of logaritmus ( like decebil )
         # apply(np.exp) for the gross performance
         self.results = data
         # gross performance of the strategy
         aperf = data['cstrategy'].iloc[-1]
         # out-/underperformance of strategy
+        # compared normal performence (creturns) with strategy performence ( cstrategy )
         operf = aperf - data['creturns'].iloc[-1]
-        return round(aperf, 2), round(operf, 2)
+        # General
+        # Because of shifting and removing NaNs, there will be different results
+        genperf = data['creturns'].iloc[-1]
+
+        return round(aperf, 2), round(operf, 2), round(genperf, 4), data['price'].iloc[0], data['price'].iloc[-1]
 
     def plot_results(self):
         ''' Plots the cumulative performance of the trading strategy
@@ -142,4 +150,5 @@ if __name__ == '__main__':
 
     smabt.set_parameters(SMA1=20, SMA2=100)
     print(smabt.run_strategy())
+
     print(smabt.optimize_parameters((30, 56, 4), (200, 300, 4)))
