@@ -15,7 +15,7 @@ print(e)  # , z, minus) # 0.003752068036798753 1.0037591158559507 0.004999999999
 print((e + 1) * 1.33510)  # 1.33009061396407
 print(e * 1.33010)  # -0.004990625695745985"""
 
-data = np.array([1, 3, 7, 9], dtype=np.float64)
+data = np.array([1, 3, 7, 9, 8, 2, 38, 43, 3, 5, 23, 43, 1123], dtype=np.float64)
 pdata = pd.DataFrame(data)
 pdata["normal"] = pdata[0] / pdata[0].shift(1)
 pdata["log"] = np.log(pdata[0] / pdata[0].shift(1))

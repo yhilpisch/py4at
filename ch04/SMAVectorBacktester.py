@@ -10,6 +10,7 @@
 import numpy as np
 import pandas as pd
 from scipy.optimize import brute
+import matplotlib.pyplot as plt
 
 testresult = pd.DataFrame()
 
@@ -67,6 +68,9 @@ class SMAVectorBacktester(object):
         # Durch den Logaritmus lässt sich der Wachstumswert addieren! würde sonst nicht gehen, muss aber dann später wieder exponiert werden
         raw['SMA1'] = raw['price'].rolling(self.SMA1).mean() # Rolling Window means to move the row down on ... steps
         raw['SMA2'] = raw['price'].rolling(self.SMA2).mean() # mean is the middle ( approximation )
+        # Plott price
+        raw['price'].plot(title="Eur/Dol Price",figsize=(10, 6))
+        plt.show()
         self.data = raw
 
     def set_parameters(self, SMA1=None, SMA2=None):
@@ -105,7 +109,8 @@ class SMAVectorBacktester(object):
         # Because of shifting and removing NaNs, there will be different results
         genperf = data['creturns'].iloc[-1]
 
-        return round(aperf, 2), round(operf, 2), round(genperf, 4), data['price'].iloc[0], data['price'].iloc[-1]
+        return round(aperf, 2), round(operf, 2),\
+            round(genperf, 4), data['price'].iloc[0], data['price'].iloc[-1]
 
     def plot_results(self):
         ''' Plots the cumulative performance of the trading strategy
@@ -117,6 +122,9 @@ class SMAVectorBacktester(object):
                                                self.SMA1, self.SMA2)
         self.results[['creturns', 'cstrategy']].plot(title=title,
                                                      figsize=(10, 6))
+        #plt.rcParams['savefig.dpi'] = 600
+        #plt.savefig('filename.pdf')
+        plt.show()
 
     def update_and_run(self, SMA):
         ''' Updates SMA parameters and returns negative absolute performance
@@ -146,9 +154,11 @@ if __name__ == '__main__':
     smabt = SMAVectorBacktester('EUR=', 42, 252,
                                 '2010-1-1', '2020-12-31')
     print(smabt.run_strategy())
-    smabt.plot_results()
+    smabt.plot_results( )
+
 
     smabt.set_parameters(SMA1=20, SMA2=100)
     print(smabt.run_strategy())
+    smabt.plot_results()
 
     print(smabt.optimize_parameters((30, 56, 4), (200, 300, 4)))

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="understand growing normilizer and pandas math.">
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="Understand chap04">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyExperiments/math_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/math_play.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ch04/SMAVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch04/SMAVectorBacktester.py" afterDir="false" />
@@ -124,6 +124,9 @@
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -168,7 +171,8 @@
       <updated>1636752502682</updated>
       <workItem from="1636752504578" duration="8011000" />
       <workItem from="1636808531174" duration="2787000" />
-      <workItem from="1636812086102" duration="24156000" />
+      <workItem from="1636812086102" duration="24907000" />
+      <workItem from="1637007778420" duration="3990000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -191,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636841729798</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Understand chap04">
+      <created>1636997703841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636997703841</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,10 +224,18 @@
     <MESSAGE value="ch4 got SMA" />
     <MESSAGE value="Got pandas more" />
     <MESSAGE value="understand growing normilizer and pandas math." />
-    <option name="LAST_COMMIT_MESSAGE" value="understand growing normilizer and pandas math." />
+    <MESSAGE value="Understand chap04" />
+    <option name="LAST_COMMIT_MESSAGE" value="Understand chap04" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ch04/SMAVectorBacktester.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -225,11 +244,16 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.data.SMA1" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main.coverage" NAME="main Coverage Results" MODIFIED="1636752624528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$math_play.coverage" NAME="math_play Coverage Results" MODIFIED="1636988413583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$SMAVectorBacktester.coverage" NAME="SMAVectorBacktester Coverage Results" MODIFIED="1636996904745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$SMAVectorBacktester.coverage" NAME="SMAVectorBacktester Coverage Results" MODIFIED="1637016302800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$understandRolling.coverage" NAME="understandRolling Coverage Results" MODIFIED="1636760372177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
   </component>
 </project>
