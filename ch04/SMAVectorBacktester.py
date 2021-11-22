@@ -93,6 +93,7 @@ class SMAVectorBacktester(object):
         # the positionings and market returns
         data.dropna(inplace=True)
         data['creturns'] = data['return'].cumsum().apply(np.exp) # sums up the single log returns values for the stock
+        # Any posetiv value in exp func is min 1
         testresult[self.SMA1] = data['creturns']
         #  ( for illustration only )
         # np.cumsum is the summ cell for cell

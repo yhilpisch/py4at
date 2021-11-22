@@ -9,6 +9,8 @@
 #
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.optimize import brute
 
 
 class MomVectorBacktester(object):
@@ -62,14 +64,17 @@ class MomVectorBacktester(object):
         ''' Backtests the trading strategy.
         '''
         self.momentum = momentum
+        # Entfernt NaNs
         data = self.data.copy().dropna()
+        # np.sign: return by negativ -1, by posetive 1 and by 0 = 0
         data['position'] = np.sign(data['return'].rolling(momentum).mean())
         data['strategy'] = data['position'].shift(1) * data['return']
         # determine when a trade takes place
         data.dropna(inplace=True)
+        # Füllt alla NAN mit 0
         trades = data['position'].diff().fillna(0) != 0
         # subtract transaction costs from return when trade takes place
-        data['strategy'][trades] -= self.tc
+        data['strategy'][trades] -= self.tc #second indexer is used as mask only in Pandas (Mask is an boolen Array) # https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html
         data['creturns'] = self.amount * data['return'].cumsum().apply(np.exp)
         data['cstrategy'] = self.amount * \
             data['strategy'].cumsum().apply(np.exp)
@@ -89,6 +94,11 @@ class MomVectorBacktester(object):
         title = '%s | TC = %.4f' % (self.symbol, self.tc)
         self.results[['creturns', 'cstrategy']].plot(title=title,
                                                      figsize=(10, 6))
+        plt.show()
+
+    def optimize_parameters(self, *range_args):
+        opt = brute(self.run_strategy, range_args, finish=None)
+        return opt, -self.run_strategy(opt)
 
 
 if __name__ == '__main__':
@@ -99,3 +109,9 @@ if __name__ == '__main__':
     mombt = MomVectorBacktester('XAU=', '2010-1-1', '2020-12-31',
                                 10000, 0.001)
     print(mombt.run_strategy(momentum=2))
+    mombt.plot_results()
+
+    print(mombt.run_strategy(momentum=5))
+    mombt.plot_results()
+    print(mombt.run_strategy(momentum=7))
+    mombt.plot_results()
