@@ -10,7 +10,6 @@
 from MomVectorBacktester import *
 
 
-
 class MRVectorBacktester(MomVectorBacktester):
     ''' Class for the vectorized backtesting of
     Mean Reversion-based trading strategies.
@@ -83,7 +82,7 @@ class MRVectorBacktester(MomVectorBacktester):
 if __name__ == '__main__':
     """    mrbt = MRVectorBacktester('GDX', '2010-1-1', '2020-12-31',
                               10000, 0.0)
-    print(mrbt.run_strategy(SMA=25, threshold=5))
+    pri£mrbt.run_strategy(SMA=25, threshold=5))
     mrbt = MRVectorBacktester('GDX', '2010-1-1', '2020-12-31',
                               10000, 0.001)
     print(mrbt.run_strategy(SMA=25, threshold=5))"""

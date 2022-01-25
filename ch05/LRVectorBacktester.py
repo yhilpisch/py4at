@@ -9,7 +9,7 @@
 #
 import numpy as np
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 class LRVectorBacktester(object):
     ''' Class for the vectorized backtesting of
@@ -126,6 +126,7 @@ class LRVectorBacktester(object):
         title = '%s | TC = %.4f' % (self.symbol, self.tc)
         self.results[['creturns', 'cstrategy']].plot(title=title,
                                                      figsize=(10, 6))
+        plt.show()
 
 
 if __name__ == '__main__':
@@ -134,8 +135,11 @@ if __name__ == '__main__':
                             '2010-1-1', '2019-12-31'))
     print(lrbt.run_strategy('2010-1-1', '2015-12-31',
                             '2016-1-1', '2019-12-31'))
+    lrbt.plot_results()
     lrbt = LRVectorBacktester('GDX', '2010-1-1', '2019-12-31', 10000, 0.001)
     print(lrbt.run_strategy('2010-1-1', '2019-12-31',
                             '2010-1-1', '2019-12-31', lags=5))
+    lrbt.plot_results()
     print(lrbt.run_strategy('2010-1-1', '2016-12-31',
                             '2017-1-1', '2019-12-31', lags=5))
+    lrbt.plot_results()

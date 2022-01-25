@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="Now able to plot in pycharm">
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="understand Mean Reversion.&#10;add brute to it">
+      <change afterPath="$PROJECT_DIR$/MyExperiments/New_avg_price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyExperiments/understand_LinareAgression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ch04/MRVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch04/MRVectorBacktester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch04/MomVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch04/MomVectorBacktester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch04/SMAVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch04/SMAVectorBacktester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch05/05_pyalgo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ch05/05_pyalgo.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch05/LRVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch05/LRVectorBacktester.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +35,38 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
   </component>
-  <component name="RunManager" selected="Python.MRVectorBacktester">
+  <component name="RunManager" selected="Python.understand_LinareAgression">
+    <configuration name="LRVectorBacktester" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ch05" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ch05/LRVectorBacktester.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="MRVectorBacktester" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ch04" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -59,6 +86,9 @@
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ch04" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -74,7 +104,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="SMAVectorBacktester" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="New_avg_price" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,14 +112,14 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ch04" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ch04/SMAVectorBacktester.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/New_avg_price.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -118,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="math_play" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="understand_LinareAgression" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,29 +161,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/math_play.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="optimize" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GiannisTraidingReserching" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/scipy/optimize" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/scipy/optimize/optimize.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/understand_LinareAgression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.understand_LinareAgression" />
+        <item itemvalue="Python.New_avg_price" />
         <item itemvalue="Python.MRVectorBacktester" />
+        <item itemvalue="Python.LRVectorBacktester" />
         <item itemvalue="Python.MomVectorBacktester" />
-        <item itemvalue="Python.optimize" />
-        <item itemvalue="Python.SMAVectorBacktester" />
-        <item itemvalue="Python.math_play" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +202,17 @@
       <workItem from="1636808531174" duration="2787000" />
       <workItem from="1636812086102" duration="24907000" />
       <workItem from="1637007778420" duration="5337000" />
-      <workItem from="1637429759797" duration="13944000" />
+      <workItem from="1637429759797" duration="17727000" />
+      <workItem from="1637707197128" duration="611000" />
+      <workItem from="1637707834038" duration="5497000" />
+      <workItem from="1637846709203" duration="598000" />
+      <workItem from="1638471988943" duration="1507000" />
+      <workItem from="1638905223985" duration="3621000" />
+      <workItem from="1638998905411" duration="634000" />
+      <workItem from="1639583871683" duration="3263000" />
+      <workItem from="1641589242506" duration="1201000" />
+      <workItem from="1641593572308" duration="599000" />
+      <workItem from="1642795673599" duration="598000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -231,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637016801383</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="understand Mean Reversion.&#10;add brute to it">
+      <created>1637623781270</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637623781270</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +280,8 @@
     <MESSAGE value="understand growing normilizer and pandas math." />
     <MESSAGE value="Understand chap04" />
     <MESSAGE value="Now able to plot in pycharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now able to plot in pycharm" />
+    <MESSAGE value="understand Mean Reversion.&#10;add brute to it" />
+    <option name="LAST_COMMIT_MESSAGE" value="understand Mean Reversion.&#10;add brute to it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -274,6 +300,11 @@
           <url>file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/scipy/optimize/optimize.py</url>
           <line>3399</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/hans/Documents/Github/GiannisTraidingReserching/ch05/05_pyalgo.ipynb</url>
+          <line>95</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
