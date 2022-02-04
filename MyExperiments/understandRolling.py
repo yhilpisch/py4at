@@ -14,7 +14,7 @@ data.columns.values[0] = "orig"
 data["max"] = data["orig"].rolling(window).max()
 data["min"] = data["orig"].rolling(window).min()
 data["mean"] = data["orig"].rolling(window).mean()
-#data["sum"] = data["orig"].rolling(window).sum()
+#row_data["sum"] = row_data["orig"].rolling(window).sum()
 
 
 mpl.use('TkAgg')

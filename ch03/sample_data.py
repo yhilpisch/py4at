@@ -15,7 +15,7 @@ sigma = 0.5  # volatility factor
 
 def generate_sample_data(rows, cols, freq='1min') -> pd.DataFrame:
     '''
-    Function to generate sample financial data.
+    Function to generate sample financial row_data.
 
     Parameters
     ==========
@@ -29,7 +29,7 @@ def generate_sample_data(rows, cols, freq='1min') -> pd.DataFrame:
     Returns
     =======
     df: DataFrame
-        DataFrame object with the sample data
+        DataFrame object with the sample row_data
     '''
     rows = int(rows)
     cols = int(cols)
@@ -43,7 +43,7 @@ def generate_sample_data(rows, cols, freq='1min') -> pd.DataFrame:
     raw = np.exp(np.cumsum((r - 0.5 * sigma ** 2) * dt +
                  sigma * np.sqrt(dt) *
                  np.random.standard_normal((rows, cols)), axis=0))
-    # normalize the data to start at 100
+    # normalize the row_data to start at 100
     raw = raw / raw[0] * 100
     # generate the DataFrame object
     df = pd.DataFrame(raw, index=index, columns=columns)

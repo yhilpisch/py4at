@@ -22,9 +22,9 @@ class MomVectorBacktester(object):
     symbol: str
        RIC (financial instrument) to work with
     start: str
-        start date for data selection
+        start date for row_data selection
     end: str
-        end date for data selection
+        end date for row_data selection
     amount: int, float
         amount to be invested at the beginning
     tc: float
@@ -33,7 +33,7 @@ class MomVectorBacktester(object):
     Methods
     =======
     get_data:
-        retrieves and prepares the base data set
+        retrieves and prepares the base row_data set
     run_strategy:
         runs the backtest for the momentum-based strategy
     plot_results:
@@ -50,7 +50,7 @@ class MomVectorBacktester(object):
         self.get_data()
 
     def get_data(self):
-        ''' Retrieves and prepares the data.
+        ''' Retrieves and prepares the row_data.
         '''
         raw = pd.read_csv('http://hilpisch.com/pyalgo_eikon_eod_data.csv',
                           index_col=0, parse_dates=True).dropna()
@@ -90,7 +90,7 @@ class MomVectorBacktester(object):
         compared to the symbol.
         '''
         if self.results is None:
-            print('No results to plot yet. Run a strategy.')
+            print('No signaled_data to plot yet. Run a strategy.')
         title = '%s | TC = %.4f' % (self.symbol, self.tc)
         self.results[['creturns', 'cstrategy']].plot(title=title,
                                                      figsize=(10, 6))

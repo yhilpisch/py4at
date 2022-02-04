@@ -25,7 +25,7 @@ class MomentumTrader(tpqoa.tpqoa):
         self.min_length = self.momentum + 1
 
     def on_success(self, time, bid, ask):
-        ''' Takes actions when new tick data arrives. '''
+        ''' Takes actions when new tick row_data arrives. '''
         print(self.ticks, end=' ')
         self.raw_data = self.raw_data.append(pd.DataFrame(
             {'bid': bid, 'ask': ask}, index=[pd.Timestamp(time)]))

@@ -4,32 +4,20 @@ import numpy
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+from Generating_test_Data import *
+from itertools import islice
 
 
 class DCABot(object):
 
-    def __init__(self, start, end, takeProfitProcent):
-        self.start = start
-        self.end = end
-        self.results = None
-        self.data = self.get_data()
+    def __init__(self, data, takeProfitProcent):
+        self.signaled_data = data
+        self.row_data = data
         self.take_profit_procent = takeProfitProcent
 
-    def get_data(self):
-        ''' Retrieves and prepares the data.
-        '''
-
-        raw = pd.read_csv(
-            '/Users/hans/Documents/Github/GiannisTraidingReserching/MyExperiments/historyCryptoData/Binance_BTCUSDT_minute.csv',
-            index_col=1,  # ist wichtig Index muss Datum sein sonst geht raw.loc[ nicht
-            parse_dates=True).dropna().drop(columns="unix")
-        raw = raw.loc[self.start:self.end]
-
-        # raw.rename(columns={self.symbol: 'price'}, inplace=True)
-        return raw
 
     def Get_Signals(self):
-        data = self.data.copy().dropna()  # remove NaN Rows
+        data = self.row_data.copy().dropna()  # remove NaN Rows
         price = data["open"]
         data['return'] = np.log(price / price.shift(1))
         data['grows'] = data['return'].rolling(60 * 3).mean()
@@ -39,7 +27,7 @@ class DCABot(object):
         # buy signals
         data['buy'] = np.where(data['grows'] >= 0.0003, data["open"], np.nan)
 
-        self.results = data
+        self.signaled_data = data
 
     def calc_safty_orders(self,
                           signal_enter_df,
@@ -70,8 +58,9 @@ class DCABot(object):
         quantity = start_base_size / start_buy_price
         next_safety_order_price = start_buy_price - (safety_order_step_scale * price_deviation / 100 * start_buy_price)
         max_safety_trades_counter = 0
+        safety_buys = pd.DataFrame(data={'vol': [quantity], 'price': [start_buy_price]})
 
-        for index, candle in signal_enter_df.iterrows():
+        for index, candle in signal_enter_df.iloc[1:].iterrows():
             next_price = candle['open']
             if next_price > take_profit_price:
                 return prepare_return_values(signal_enter_df, index, candle, max_safety_trades_counter)
@@ -81,9 +70,13 @@ class DCABot(object):
 
             if next_price < next_safety_order_price:
                 max_safety_trades_counter += 1
-                quantity += safety_order_size * (safety_order_volume_scale ** max_safety_trades_counter) / next_price
+                quantity = safety_order_size * (safety_order_volume_scale ** max_safety_trades_counter) / next_price
                 next_safety_order_price = start_buy_price - (max_safety_trades_counter ** (
                         safety_order_step_scale * price_deviation) / 100 * start_buy_price)
+                # Get new average buy price
+                safety_buys = safety_buys.append({'vol': quantity, 'price': next_price}, ignore_index=True)
+                safety_buys["average"] = (safety_buys['vol'] * safety_buys['price']).cumsum().mean()
+                take_profit_price = safety_buys["average"].iloc[-1] * (1 + self.take_profit_procent)
 
         print("Out of chart history")
         return prepare_return_values(signal_enter_df, index, candle, max_safety_trades_counter)
@@ -93,25 +86,25 @@ class DCABot(object):
             return self.calc_safty_orders(chart_selection, **args)
 
     def buy_signal(self):
-        for i, val in enumerate(self.results['buy']):
+        for i, val in enumerate(self.signaled_data['buy']):
             if not numpy.isnan(val):
-                yield self.results[i:]
+                yield self.signaled_data[i:]
 
     def plot_results(self):
         ''' Plots the cumulative performance of the trading strategy
         compared to the symbol.
         '''
-        if self.results is None:
-            print('No results to plot yet. Run a strategy.')
+        if self.signaled_data is None:
+            print('No signaled_data to plot yet. Run a strategy.')
 
-        # pltneu = self.results[['open']].plot(title="scheise", figsize=(10, 6))
-        plt.plot(self.results['open'])
-        plt.plot(self.results['buy'], '^', markersize=6, color='g')
-        plt.plot(self.results['sell'], 'v', markersize=6, color='r')
+        # pltneu = self.signaled_data[['open']].plot(title="scheise", figsize=(10, 6))
+        plt.plot(self.signaled_data['open'])
+        plt.plot(self.signaled_data['buy'], '^', markersize=6, color='g')
+        plt.plot(self.signaled_data['sell'], 'v', markersize=6, color='r')
 
         ax = plt.gca()
         # ax.set_xlim([xmin, xmax])
-        ax.set_ylim([self.results["open"].min(), self.results["open"].max()])
+        ax.set_ylim([self.signaled_data["open"].min(), self.signaled_data["open"].max()])
 
         # plt.rcParams['savefig.dpi'] = 600
         # plt.savefig('filename.pdf')
@@ -125,8 +118,9 @@ def prepare_return_values(signal_enter_df, index, candle, max_safety_trades_coun
             "max_safety_trades_counter": max_safety_trades_counter}
 
 
-if __name__ == '__main__':
-    lala = DCABot('2022-1-04', '2022-01-06', 0.09)
+def real_data_test():
+    data = get_data_from_file('2022-1-04', '2022-01-06')
+    lala = DCABot(data, 0.09)
     lala.Get_Signals()
     # lala.plot_results()
     kwargs = {"start_base_size": 1,
@@ -139,3 +133,23 @@ if __name__ == '__main__':
     result = lala.calc_times_for_each_signal(kwargs)
     print(result)
     print("End")
+
+
+def fake_data_test():
+    data = generate_simpel_sample_data(90)
+    lala = DCABot(data, 0.09)
+    kwargs = {"start_base_size": 10,
+              "safety_order_size": 20,
+              "max_active_safety_trades_count": 1,
+              "safety_order_volume_scale": 1,
+              "price_deviation": 1,
+              "max_safety_trades_count": 1,
+              "safety_order_step_scale": 1}
+    result = lala.calc_times_for_each_signal(kwargs)
+    print(result)
+    print("End")
+
+
+if __name__ == '__main__':
+    #real_data_test()
+    fake_data_test()

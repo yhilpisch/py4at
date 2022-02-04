@@ -21,9 +21,9 @@ class BacktestBase(object):
     symbol: str
         TR RIC (financial instrument) to be used
     start: str
-        start date for data selection
+        start date for row_data selection
     end: str
-        end date for data selection
+        end date for row_data selection
     amount: float
         amount to be invested either once or per trade
     ftc: float
@@ -34,7 +34,7 @@ class BacktestBase(object):
     Methods
     =======
     get_data:
-        retrieves and prepares the base data set
+        retrieves and prepares the base row_data set
     plot_data:
         plots the closing price for the symbol
     get_date_price:
@@ -67,7 +67,7 @@ class BacktestBase(object):
         self.get_data()
 
     def get_data(self):
-        ''' Retrieves and prepares the data.
+        ''' Retrieves and prepares the row_data.
         '''
         raw = pd.read_csv('http://hilpisch.com/pyalgo_eikon_eod_data.csv',
                           index_col=0, parse_dates=True).dropna()

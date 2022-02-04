@@ -19,9 +19,9 @@ class MRVectorBacktester(MomVectorBacktester):
     symbol: str
         RIC symbol with which to work with
     start: str
-        start date for data retrieval
+        start date for row_data retrieval
     end: str
-        end date for data retrieval
+        end date for row_data retrieval
     amount: int, float
         amount to be invested at the beginning
     tc: float
@@ -30,7 +30,7 @@ class MRVectorBacktester(MomVectorBacktester):
     Methods
     =======
     get_data:
-        retrieves and prepares the base data set
+        retrieves and prepares the base row_data set
     run_strategy:
         runs the backtest for the mean reversion-based strategy
     plot_results:

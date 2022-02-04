@@ -26,14 +26,14 @@ class SMAVectorBacktester(object):
     SMA2: int
         time window in days for longer SMA
     start: str
-        start date for data retrieval
+        start date for row_data retrieval
     end: str
-        end date for data retrieval
+        end date for row_data retrieval
 
     Methods
     =======
     get_data:
-        retrieves and prepares the base data set
+        retrieves and prepares the base row_data set
     set_parameters:
         sets one or two new SMA parameters
     run_strategy:
@@ -56,7 +56,7 @@ class SMAVectorBacktester(object):
         self.get_data()
 
     def get_data(self):
-        ''' Retrieves and prepares the data.
+        ''' Retrieves and prepares the row_data.
         '''
         raw = pd.read_csv('http://hilpisch.com/pyalgo_eikon_eod_data.csv',
                           index_col=0, parse_dates=True).dropna() # dropna means that all NaN types raws will remove
@@ -107,7 +107,7 @@ class SMAVectorBacktester(object):
         # compared normal performence (creturns) with strategy performence ( cstrategy )
         operf = aperf - data['creturns'].iloc[-1]
         # General
-        # Because of shifting and removing NaNs, there will be different results
+        # Because of shifting and removing NaNs, there will be different signaled_data
         genperf = data['creturns'].iloc[-1]
 
         return round(aperf, 2), round(operf, 2),\
@@ -118,7 +118,7 @@ class SMAVectorBacktester(object):
         compared to the symbol.
         '''
         if self.results is None:
-            print('No results to plot yet. Run a strategy.')
+            print('No signaled_data to plot yet. Run a strategy.')
         title = '%s | SMA1=%d, SMA2=%d' % (self.symbol,
                                                self.SMA1, self.SMA2)
         self.results[['creturns', 'cstrategy']].plot(title=title,

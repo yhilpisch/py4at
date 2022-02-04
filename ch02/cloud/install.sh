@@ -31,14 +31,14 @@ export PATH="/root/miniconda3/bin:$PATH"
 EOF
 
 # INSTALLING PYTHON LIBRARIES
-conda install -y jupyter  # interactive data analytics in the browser
+conda install -y jupyter  # interactive row_data analytics in the browser
 conda install -y jupyterlab  # Jupyter Lab environment
 conda install -y numpy  #  numerical computing package
 conda install -y pytables  # wrapper for HDF5 binary storage
-conda install -y pandas  #  data analysis package
+conda install -y pandas  #  row_data analysis package
 conda install -y matplotlib  # standard plotting library
 conda install -y seaborn  # statistical plotting library
-conda install -y quandl  # wrapper for Quandl data API
+conda install -y quandl  # wrapper for Quandl row_data API
 conda install -y scikit-learn  # machine learning library
 conda install -y openpyxl  # package for Excel interaction
 conda install -y xlrd xlwt  # packages for Excel interaction

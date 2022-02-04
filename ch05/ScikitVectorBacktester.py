@@ -21,9 +21,9 @@ class ScikitVectorBacktester(object):
     symbol: str
         TR RIC (financial instrument) to work with
     start: str
-        start date for data selection
+        start date for row_data selection
     end: str
-        end date for data selection
+        end date for row_data selection
     amount: int, float
         amount to be invested at the beginning
     tc: float
@@ -34,11 +34,11 @@ class ScikitVectorBacktester(object):
     Methods
     =======
     get_data:
-        retrieves and prepares the base data set
+        retrieves and prepares the base row_data set
     select_data:
-        selects a sub-set of the data
+        selects a sub-set of the row_data
     prepare_features:
-        prepares the features data for the model fitting
+        prepares the features row_data for the model fitting
     fit_model:
         implements the fitting step
     run_strategy:
@@ -64,7 +64,7 @@ class ScikitVectorBacktester(object):
         self.get_data()
 
     def get_data(self):
-        ''' Retrieves and prepares the data.
+        ''' Retrieves and prepares the row_data.
         '''
         raw = pd.read_csv('http://hilpisch.com/pyalgo_eikon_eod_data.csv',
                           index_col=0, parse_dates=True).dropna()
@@ -75,7 +75,7 @@ class ScikitVectorBacktester(object):
         self.data = raw.dropna()
 
     def select_data(self, start, end):
-        ''' Selects sub-sets of the financial data.
+        ''' Selects sub-sets of the financial row_data.
         '''
         data = self.data[(self.data.index >= start) &
                          (self.data.index <= end)].copy()
@@ -104,7 +104,7 @@ class ScikitVectorBacktester(object):
         '''
         self.lags = lags
         self.fit_model(start_in, end_in)
-        # data = self.select_data(start_out, end_out)
+        # row_data = self.select_data(start_out, end_out)
         self.prepare_features(start_out, end_out)
         prediction = self.model.predict(
             self.data_subset[self.feature_columns])
@@ -131,7 +131,7 @@ class ScikitVectorBacktester(object):
         compared to the symbol.
         '''
         if self.results is None:
-            print('No results to plot yet. Run a strategy.')
+            print('No signaled_data to plot yet. Run a strategy.')
         title = '%s | TC = %.4f' % (self.symbol, self.tc)
         self.results[['creturns', 'cstrategy']].plot(title=title,
                                                      figsize=(10, 6))
