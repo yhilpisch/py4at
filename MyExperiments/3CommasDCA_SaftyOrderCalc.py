@@ -56,27 +56,32 @@ class DCABot(object):
         start_time = signal_enter_df.iloc[0][0]
         take_profit_price = start_buy_price * (1 + self.take_profit_procent)
         quantity = start_base_size / start_buy_price
-        next_safety_order_price = start_buy_price - (safety_order_step_scale * price_deviation / 100 * start_buy_price)
+        next_safety_order_price = start_buy_price - (price_deviation / 100 * start_buy_price)
         max_safety_trades_counter = 0
-        safety_buys = pd.DataFrame(data={'vol': [quantity], 'price': [start_buy_price]})
+        safety_buys = pd.DataFrame(data={'vol': [quantity], 'price': [start_buy_price], 'payed': [quantity * start_buy_price]})
 
         for index, candle in signal_enter_df.iloc[1:].iterrows():
             next_price = candle['open']
             if next_price > take_profit_price:
                 return prepare_return_values(signal_enter_df, index, candle, max_safety_trades_counter)
 
-            if max_safety_trades_counter > max_active_safety_trades_count:
+            if max_safety_trades_counter >= max_safety_trades_count:
                 continue
 
             if next_price < next_safety_order_price:
                 max_safety_trades_counter += 1
-                quantity = safety_order_size * (safety_order_volume_scale ** max_safety_trades_counter) / next_price
-                next_safety_order_price = start_buy_price - (max_safety_trades_counter ** (
-                        safety_order_step_scale * price_deviation) / 100 * start_buy_price)
+                # Buy
+                quantity = safety_order_size * (safety_order_volume_scale ** max_safety_trades_counter) / next_safety_order_price
                 # Get new average buy price
-                safety_buys = safety_buys.append({'vol': quantity, 'price': next_price}, ignore_index=True)
-                safety_buys["average"] = (safety_buys['vol'] * safety_buys['price']).cumsum().mean()
-                take_profit_price = safety_buys["average"].iloc[-1] * (1 + self.take_profit_procent)
+                safety_buys = safety_buys.append({'vol': quantity, 'price': next_safety_order_price}, ignore_index=True)
+                safety_buys["payed"] = (safety_buys['vol'] * safety_buys['price'])
+                safety_buys["payed_Sum"] = safety_buys["payed"].cumsum()
+                safety_buys["vol_Sum"] = safety_buys["vol"].cumsum()
+                safety_buys["average_price"] = safety_buys["payed_Sum"] / safety_buys["vol_Sum"]
+                take_profit_price = safety_buys["average_price"].iloc[-1] * (1 + self.take_profit_procent)
+                # Next price
+                next_safety_order_price = start_buy_price - (safety_order_step_scale ** (
+                            max_safety_trades_counter + 1) * price_deviation / 100 * start_buy_price)
 
         print("Out of chart history")
         return prepare_return_values(signal_enter_df, index, candle, max_safety_trades_counter)
@@ -125,7 +130,7 @@ def real_data_test():
     # lala.plot_results()
     kwargs = {"start_base_size": 1,
               "safety_order_size": 1,
-              "max_active_safety_trades_count": 1,
+              "max_active_safety_trades_count": 10,
               "safety_order_volume_scale": 1,
               "price_deviation": 1,
               "max_safety_trades_count": 1,
@@ -136,15 +141,15 @@ def real_data_test():
 
 
 def fake_data_test():
-    data = generate_simpel_sample_data(90)
+    data = generate_simpel_sample_data(100)
     lala = DCABot(data, 0.09)
     kwargs = {"start_base_size": 10,
               "safety_order_size": 20,
-              "max_active_safety_trades_count": 1,
-              "safety_order_volume_scale": 1,
-              "price_deviation": 1,
-              "max_safety_trades_count": 1,
-              "safety_order_step_scale": 1}
+              "max_active_safety_trades_count": 5, # uninteressant
+              "safety_order_volume_scale": 2,
+              "price_deviation": 1.1,
+              "max_safety_trades_count": 5,
+              "safety_order_step_scale": 2}
     result = lala.calc_times_for_each_signal(kwargs)
     print(result)
     print("End")

@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma saftyOrder Methode definiert">
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma test system integrated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/New_avg_price.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/New_avg_price.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/understandRolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/understandRolling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch02/cloud/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ch02/cloud/install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch03/sample_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch03/sample_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch04/MRVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch04/MRVectorBacktester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch04/MomVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch04/MomVectorBacktester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch04/SMAVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch04/SMAVectorBacktester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch05/LRVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch05/LRVectorBacktester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch05/ScikitVectorBacktester.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch05/ScikitVectorBacktester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch06/BacktestBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch06/BacktestBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch08/MomentumTrader.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch08/MomentumTrader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch10/automated_strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/ch10/automated_strategy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +51,6 @@
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -238,7 +223,8 @@
       <workItem from="1643894921964" duration="13684000" />
       <workItem from="1643918513001" duration="5726000" />
       <workItem from="1643994003503" duration="3069000" />
-      <workItem from="1643997114562" duration="6721000" />
+      <workItem from="1643997114562" duration="6856000" />
+      <workItem from="1644081909592" duration="8803000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -303,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643924206909</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="3comma test system integrated">
+      <created>1644014590275</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1644014590275</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +324,8 @@
     <MESSAGE value="3comma stragies" />
     <MESSAGE value="3comma Signals setup" />
     <MESSAGE value="3comma saftyOrder Methode definiert" />
-    <option name="LAST_COMMIT_MESSAGE" value="3comma saftyOrder Methode definiert" />
+    <MESSAGE value="3comma test system integrated" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma test system integrated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -353,8 +347,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="31" />
+          <line>86</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/hans/Documents/Github/GiannisTraidingReserching/ch05/05_pyalgo.ipynb</url>
@@ -386,6 +385,6 @@
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$MRVectorBacktester.coverage" NAME="MRVectorBacktester Coverage Results" MODIFIED="1637621261880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$New_avg_price.coverage" NAME="New_avg_price Coverage Results" MODIFIED="1643994497442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$understandRolling.coverage" NAME="understandRolling Coverage Results" MODIFIED="1636760372177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$3CommasDCA_SaftyOrderCalc.coverage" NAME="3CommasDCA_SaftyOrderCalc Coverage Results" MODIFIED="1644014413943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$3CommasDCA_SaftyOrderCalc.coverage" NAME="3CommasDCA_SaftyOrderCalc Coverage Results" MODIFIED="1644091702630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
   </component>
 </project>
