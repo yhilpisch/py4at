@@ -13,8 +13,7 @@ class DCABot(object):
     def __init__(self, data, takeProfitProcent):
         self.signaled_data = data
         self.row_data = data
-        self.take_profit_procent = takeProfitProcent
-
+        self.take_profit_percent = takeProfitProcent
 
     def Get_Signals(self):
         data = self.row_data.copy().dropna()  # remove NaN Rows
@@ -54,16 +53,23 @@ class DCABot(object):
         # startBuySigRow = SignalEnterIter[0]
         start_buy_price = signal_enter_df.iloc[0]['open']
         start_time = signal_enter_df.iloc[0][0]
-        take_profit_price = start_buy_price * (1 + self.take_profit_procent)
+        take_profit_price = start_buy_price * (1 + self.take_profit_percent)
         quantity = start_base_size / start_buy_price
         next_safety_order_price = start_buy_price - (price_deviation / 100 * start_buy_price)
         max_safety_trades_counter = 0
-        safety_buys = pd.DataFrame(data={'vol': [quantity], 'price': [start_buy_price], 'payed': [quantity * start_buy_price]})
+        safety_buys = pd.DataFrame(
+            data={'vol': [quantity], 'price': [start_buy_price], 'payed': [quantity * start_buy_price]})
+        safety_buys["payed_Sum"] = safety_buys["payed"].cumsum()
 
         for index, candle in signal_enter_df.iloc[1:].iterrows():
             next_price = candle['open']
             if next_price > take_profit_price:
-                return prepare_return_values(signal_enter_df, index, candle, max_safety_trades_counter)
+                profit = take_profit_price * safety_buys["vol_Sum"].iloc[-1] - safety_buys["payed_Sum"].iloc[-1]
+                return prepare_return_values(signal_enter_df, index,
+                                             next_safety_order_price,
+                                             max_safety_trades_counter,
+                                             self.take_profit_percent,
+                                             profit=profit)
 
             if max_safety_trades_counter >= max_safety_trades_count:
                 continue
@@ -71,24 +77,36 @@ class DCABot(object):
             if next_price < next_safety_order_price:
                 max_safety_trades_counter += 1
                 # Buy
-                quantity = safety_order_size * (safety_order_volume_scale ** max_safety_trades_counter) / next_safety_order_price
-                # Get new average buy price
+                quantity = safety_order_size * (
+                            safety_order_volume_scale ** max_safety_trades_counter) / next_safety_order_price
+                # collect data
                 safety_buys = safety_buys.append({'vol': quantity, 'price': next_safety_order_price}, ignore_index=True)
                 safety_buys["payed"] = (safety_buys['vol'] * safety_buys['price'])
                 safety_buys["payed_Sum"] = safety_buys["payed"].cumsum()
                 safety_buys["vol_Sum"] = safety_buys["vol"].cumsum()
                 safety_buys["average_price"] = safety_buys["payed_Sum"] / safety_buys["vol_Sum"]
-                take_profit_price = safety_buys["average_price"].iloc[-1] * (1 + self.take_profit_procent)
+                # Get new average buy price
+                take_profit_price = safety_buys["average_price"].iloc[-1] * (1 + self.take_profit_percent)
                 # Next price
-                next_safety_order_price = start_buy_price - (safety_order_step_scale ** (
-                            max_safety_trades_counter + 1) * price_deviation / 100 * start_buy_price)
+                if safety_order_step_scale == 1:
+                    scale = (max_safety_trades_counter + 1)
+                else:
+                    scale = safety_order_step_scale ** (max_safety_trades_counter + 1)
+                next_safety_order_price = start_buy_price - scale * price_deviation / 100 * start_buy_price
 
-        print("Out of chart history")
-        return prepare_return_values(signal_enter_df, index, candle, max_safety_trades_counter)
+        #  print("Out of chart history")
+        uPNL = safety_buys['payed_Sum'].iloc[-1]
+        return prepare_return_values(signal_enter_df, index,
+                                     next_safety_order_price,
+                                     max_safety_trades_counter,
+                                     self.take_profit_percent,
+                                     uPNL=uPNL,)
 
     def calc_times_for_each_signal(self, args):
+        results = []
         for chart_selection in self.buy_signal():
-            return self.calc_safty_orders(chart_selection, **args)
+            results.append(self.calc_safty_orders(chart_selection, **args))
+        return pd.DataFrame(results)
 
     def buy_signal(self):
         for i, val in enumerate(self.signaled_data['buy']):
@@ -116,11 +134,16 @@ class DCABot(object):
         plt.show()
 
 
-def prepare_return_values(signal_enter_df, index, candle, max_safety_trades_counter):
+def prepare_return_values(signal_enter_df, index, price_exit, max_safety_trades_counter, percent,
+                        profit=0,
+                        uPNL = 0,):
     return {"duration": signal_enter_df.index[0] - index,
             "Price Enter": signal_enter_df.iloc[0]['open'],
-            "Price Exit": candle['open'],
-            "max_safety_trades_counter": max_safety_trades_counter}
+            "Price Exit": price_exit,
+            "max_safety_trades_counter": max_safety_trades_counter,
+            "in Percent": percent,
+            "uPNL": uPNL,
+            "Profit": profit}
 
 
 def real_data_test():
@@ -128,8 +151,8 @@ def real_data_test():
     lala = DCABot(data, 0.09)
     lala.Get_Signals()
     # lala.plot_results()
-    kwargs = {"start_base_size": 1,
-              "safety_order_size": 1,
+    kwargs = {"start_base_size": 10,
+              "safety_order_size": 20,
               "max_active_safety_trades_count": 10,
               "safety_order_volume_scale": 1,
               "price_deviation": 1,
@@ -141,20 +164,20 @@ def real_data_test():
 
 
 def fake_data_test():
-    data = generate_simpel_sample_data(100)
-    lala = DCABot(data, 0.09)
+    data = generate_simpel_sample_momentum()
+    lala = DCABot(data, 0.01)
     kwargs = {"start_base_size": 10,
               "safety_order_size": 20,
-              "max_active_safety_trades_count": 5, # uninteressant
-              "safety_order_volume_scale": 2,
-              "price_deviation": 1.1,
-              "max_safety_trades_count": 5,
-              "safety_order_step_scale": 2}
+              "max_active_safety_trades_count": 10,  # uninteresting
+              "safety_order_volume_scale": 1.1,
+              "price_deviation": 1,
+              "max_safety_trades_count": 10,
+              "safety_order_step_scale": 1}
     result = lala.calc_times_for_each_signal(kwargs)
     print(result)
     print("End")
 
 
 if __name__ == '__main__':
-    #real_data_test()
-    fake_data_test()
+    real_data_test()
+    #fake_data_test()

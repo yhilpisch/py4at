@@ -15,3 +15,8 @@ plt.plot(X, ST, )
 plt.scatter(X, ST)
 plt.show()
 print("Done")
+
+p = 5
+n = 2
+er = sum((i+1) * p for i in range(n)) # 276
+print(er)
