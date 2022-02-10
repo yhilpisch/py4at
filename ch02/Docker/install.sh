@@ -9,13 +9,13 @@
 # The Python Quants GmbH
 #
 # GENERAL LINUX
-apt-get update  # updates the package index cache
+apt-get update  # updates the package exit_index cache
 apt-get upgrade -y  # updates packages
 # installs system tools
 apt-get install -y bzip2 gcc git  # system tools
 apt-get install -y htop screen vim wget  # system tools
 apt-get upgrade -y bash  # upgrades bash if necessary
-apt-get clean  # cleans up the package index cache
+apt-get clean  # cleans up the package exit_index cache
 
 # INSTALL MINICONDA
 # downloads Miniconda
