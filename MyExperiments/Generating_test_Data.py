@@ -1,3 +1,4 @@
+from datetime import datetime
 from random import random
 
 import numpy
@@ -35,16 +36,19 @@ def generate_simpel_sample_momentum(rows=100, freq='1min') -> pd.DataFrame:
 
 
 # test:
-hshsh = generate_simpel_sample_momentum()
-print("test")
+# hshsh = generate_simpel_sample_momentum()
+# print("test")
 
-def get_data_from_file(start, end):
+def get_data_from_file(start, end, file_name):
     ''' Retrieves and prepares the row_data.
     '''
+    dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d %H:%M:%S')
     raw = pd.read_csv(
-        '/Users/hans/Documents/Github/GiannisTraidingReserching/MyExperiments/historyCryptoData/Binance_BTCUSDT_minute.csv',
-        index_col=1,  # ist wichtig Index muss Datum sein sonst geht raw.loc[ nicht
-        parse_dates=True).dropna().drop(columns="unix")
-    raw = raw.loc[start:end]
-    # raw.rename(columns={self.symbol: 'price'}, inplace=True)
+        '/Users/hans/Documents/Github/GiannisTraidingReserching/MyExperiments/historyCryptoData/' + file_name,
+        index_col="date",  # ist wichtig Index muss Datum sein sonst geht raw.loc[ nicht
+        parse_dates=True
+    ).dropna()
+    # upside down
+    raw.info()
+    raw = raw.reindex(index=raw.index[::-1]).loc[start:end]
     return raw

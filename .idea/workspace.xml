@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma Signals added">
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma Signals now prepared for backtesting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/Generating_test_Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Generating_test_Data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/signals.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +32,7 @@
     <setting file="file://$PROJECT_DIR$/MyExperiments/Generating_test_Data.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/indexes/extension.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/arrays/datetimelike.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20prj8naXfci99etcyhbCadjwwb" />
   <component name="ProjectViewState">
@@ -56,30 +59,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/MyExperiments/historyCryptoData" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MyExperiments/historyCryptoData" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.signals">
-    <configuration name="3CommasDCA_SaftyOrderCalc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GiannisTraidingReserching" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.format_date_of_csv">
     <configuration name="Generating_test_Data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,7 +86,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="New_avg_price" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Run_backtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -115,7 +99,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/New_avg_price.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/Run_backtest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Three_commasDCA_safety_order_calc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,20 +152,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="basicTry" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="format_date_of_csv" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/basicTry.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/format_date_of_csv.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -202,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.format_date_of_csv" />
+        <item itemvalue="Python.Run_backtest" />
         <item itemvalue="Python.signals" />
         <item itemvalue="Python.Generating_test_Data" />
-        <item itemvalue="Python.3CommasDCA_SaftyOrderCalc" />
-        <item itemvalue="Python.basicTry" />
-        <item itemvalue="Python.New_avg_price" />
+        <item itemvalue="Python.Three_commasDCA_safety_order_calc" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +243,7 @@
       <workItem from="1643997114562" duration="6856000" />
       <workItem from="1644081909592" duration="16197000" />
       <workItem from="1644341694766" duration="28269000" />
-      <workItem from="1644868709416" duration="6087000" />
+      <workItem from="1644868709416" duration="19777000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -333,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644461400167</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="3comma Signals now prepared for backtesting">
+      <created>1644874920273</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1644874920274</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +375,8 @@
     <MESSAGE value="3comma tests working" />
     <MESSAGE value="3comma real Data Test working" />
     <MESSAGE value="3comma Signals added" />
-    <option name="LAST_COMMIT_MESSAGE" value="3comma Signals added" />
+    <MESSAGE value="3comma Signals now prepared for backtesting" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma Signals now prepared for backtesting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -381,19 +392,34 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py</url>
-          <line>189</line>
+          <url>file://$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py</url>
+          <line>182</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MyExperiments/3CommasDCA_SaftyOrderCalc.py</url>
-          <line>172</line>
+          <url>file://$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py</url>
+          <line>165</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/MyExperiments/signals.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="131" />
+          <line>23</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MyExperiments/Run_backtest.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MyExperiments/Run_backtest.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/hans/Documents/Github/GiannisTraidingReserching/ch05/05_pyalgo.ipynb</url>
@@ -420,11 +446,13 @@
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Generating_test_Data.coverage" NAME="Generating_test_Data Coverage Results" MODIFIED="1644457623511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main.coverage" NAME="main Coverage Results" MODIFIED="1636752624528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$optimize.coverage" NAME="optimize Coverage Results" MODIFIED="1637621233789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/scipy/optimize" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_backtest.coverage" NAME="Run_backtest Coverage Results" MODIFIED="1644895760143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$signals.coverage" NAME="signals Coverage Results" MODIFIED="1644887787170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$New_avg_price.coverage" NAME="New_avg_price Coverage Results" MODIFIED="1643994497442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$math_play.coverage" NAME="math_play Coverage Results" MODIFIED="1636988413583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$SMAVectorBacktester.coverage" NAME="SMAVectorBacktester Coverage Results" MODIFIED="1637430786383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$signals.coverage" NAME="signals Coverage Results" MODIFIED="1644874600339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$format_date_of_csv.coverage" NAME="format_date_of_csv Coverage Results" MODIFIED="1644896479343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$MRVectorBacktester.coverage" NAME="MRVectorBacktester Coverage Results" MODIFIED="1637621261880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$New_avg_price.coverage" NAME="New_avg_price Coverage Results" MODIFIED="1643994497442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$understandRolling.coverage" NAME="understandRolling Coverage Results" MODIFIED="1636760372177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$3CommasDCA_SaftyOrderCalc.coverage" NAME="3CommasDCA_SaftyOrderCalc Coverage Results" MODIFIED="1644442713084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
   </component>

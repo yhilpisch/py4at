@@ -34,11 +34,11 @@ for i, v in enumerate(buy_signal):
     if a > 0:
         buy_signal[i] = False
         a -= 1
-print("Signals amount" + buy_signal.sum())
+print("Signals amount" + str(buy_signal.sum()))
 # df["buy_signal"] = np.where(df['macd'] > 60, df['macd'], np.nan)
 plt.figure(dpi=600)
-plt.plot(df["macd"])
-plt.plot(df["macd"][buy_signal], '^', markersize=1, color='g')
+plt.plot(df["close"])
+plt.plot(df["close"][buy_signal], '^', markersize=1, color='g')
 plt.show()
 
 
