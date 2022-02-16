@@ -9,13 +9,15 @@ from scipy import optimize
 from Three_commasDCA_safety_order_calc import *
 
 
+
+
 class DCABot(SaftyOrder):
+
+    s_result = Queue()
 
     def __init__(self, data, takeProfitProcent):
         super().__init__(data, takeProfitProcent)
-        self.result = Queue()
-        # Declraing a lock
-        self.lock = threading.Lock()
+
 
     def get_signals(self):
         # Clean NaN values
@@ -39,7 +41,7 @@ class DCABot(SaftyOrder):
     # This does overfitting the stradegy
     def optimize_parameters(self, rranges, params):
         opt = optimize.brute(self.update_and_run, rranges, args=params, finish=None, workers=-1)
-        return opt, -self.update_and_run(opt)
+        return opt, -self.update_and_run((opt[0], opt[1], opt[2], opt[3]), *params)
 
     def update_and_run(self, rranges, start_base_size, safety_order_size, max_active_safety_trades_count):
         (safety_order_volume_scale, price_deviation, max_safety_trades_count, safety_order_step_scale) = rranges
@@ -53,7 +55,8 @@ class DCABot(SaftyOrder):
                   "safety_order_step_scale": safety_order_step_scale}
         result = self.calc_times_for_each_signal(kwargs)
 
-        #self.result.put((result["uPNL"].sum(), result['Profit'].iloc[-1]))
+        # not working, dont know way
+        # DCABot.s_result.put((result["uPNL"].sum(), result['Profit'].iloc[-1]))
 
         try:
             result["sum_profit"] = result["Profit"].cumsum()
