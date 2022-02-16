@@ -1,4 +1,5 @@
 import threading
+from queue import Queue
 
 import pandas as pd
 from ta.trend import macd_diff
@@ -12,7 +13,7 @@ class DCABot(SaftyOrder):
 
     def __init__(self, data, takeProfitProcent):
         super().__init__(data, takeProfitProcent)
-        self.result = []
+        self.result = Queue()
         # Declraing a lock
         self.lock = threading.Lock()
 
@@ -41,8 +42,7 @@ class DCABot(SaftyOrder):
         return opt, -self.update_and_run(opt)
 
     def update_and_run(self, rranges, start_base_size, safety_order_size, max_active_safety_trades_count):
-        (safety_order_volume_scale,
-         price_deviation, max_safety_trades_count, safety_order_step_scale) = rranges
+        (safety_order_volume_scale, price_deviation, max_safety_trades_count, safety_order_step_scale) = rranges
 
         kwargs = {"start_base_size": start_base_size,
                   "safety_order_size": safety_order_size,
@@ -53,9 +53,7 @@ class DCABot(SaftyOrder):
                   "safety_order_step_scale": safety_order_step_scale}
         result = self.calc_times_for_each_signal(kwargs)
 
-        self.lock.acquire()
-        self.result += result
-        self.lock.release()
+        #self.result.put((result["uPNL"].sum(), result['Profit'].iloc[-1]))
 
         try:
             result["sum_profit"] = result["Profit"].cumsum()
