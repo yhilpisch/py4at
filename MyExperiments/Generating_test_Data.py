@@ -29,9 +29,9 @@ def generate_simpel_sample_momentum(rows=100, freq='1min') -> pd.DataFrame:
     index = pd.date_range('2021-1-1', periods=rows * 2, freq=freq)
     row = np.append(np.linspace(rows, 1, num=rows), np.linspace(1, rows, num=rows))
     # generate the DataFrame object
-    df = pd.DataFrame({"open": row, "buy_signal": np.nan}, index=index)
+    df = pd.DataFrame({"open": row, "buy": np.False_}, index=index)
     add_candle_data(df)
-    df["buy_signal"][0] = 1
+    df.loc['2021-1-1 00:00:00', "buy"] = True
     return df
 
 

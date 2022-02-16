@@ -18,6 +18,7 @@ class SaftyOrder(object):
         data['sell_signal'] = np.where(data['grows'] <= -0.00007, data["open"], np.nan)
         # buy signals
         data['buy_signal'] = np.where(data['grows'] >= 0.0003, data["open"], np.nan)
+        data['buy'] = data['buy_signal'].map(lambda x: not numpy.isnan(x))
 
         self.signaled_data = data
 
@@ -93,7 +94,7 @@ class SaftyOrder(object):
                 next_safety_order_price = start_buy_price - scale * price_deviation / 100 * start_buy_price
 
         #  print("Out of chart history")
-        uPNL = safety_buys['payed_Sum'].iloc[-1]
+        uPNL = safety_buys["payed_Sum"].iloc[-1] - safety_buys['vol'].iloc[-1] * take_profit_price
         return prepare_return_values(signal_enter_df,
                                      len(signal_enter_df) - 1,
                                      take_profit_price,
@@ -139,8 +140,8 @@ def prepare_return_values(signal_enter_df, exit_index, price_exit, max_safety_tr
                           profit=0,
                           uPNL=0, ):
     return {"Created": signal_enter_df.index[0],
-            "Exit_Date": signal_enter_df.index[exit_index],
-            "duration": signal_enter_df.index[exit_index] - signal_enter_df.index[0],
+            "Exit_Date": signal_enter_df.index[exit_index - 1],
+            "duration": signal_enter_df.index[exit_index - 1] - signal_enter_df.index[0],
             "Price_Enter": signal_enter_df.iloc[0]['open'],
             "Price_Exit": price_exit,
             "max_safety_trades_counter": max_safety_trades_counter,
