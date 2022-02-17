@@ -59,9 +59,8 @@ class DCABot(SaftyOrder):
         # DCABot.s_result.put((result["uPNL"].sum(), result['Profit'].iloc[-1]))
 
         try:
-            result["sum_profit"] = result["Profit"].cumsum()
-            win = result['Profit'].iloc[-1] - result["uPNL"].sum()
+            win = result['Profit'].sum() - result["uPNL"].sum()
         except:
             print("empty")
             return -10000
-        return win
+        return -win

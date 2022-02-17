@@ -68,6 +68,7 @@ class SaftyOrder(object):
                                              take_profit_price,
                                              max_safety_trades_counter,
                                              self.take_profit_percent,
+                                             safety_buys["payed_Sum"].iloc[-1],
                                              profit=profit)
 
             if max_safety_trades_counter >= max_safety_trades_count:
@@ -100,6 +101,7 @@ class SaftyOrder(object):
                                      take_profit_price,
                                      max_safety_trades_counter,
                                      self.take_profit_percent,
+                                     safety_buys["payed_Sum"].iloc[-1],
                                      uPNL=uPNL,)
 
     def calc_times_for_each_signal(self, args):
@@ -136,7 +138,7 @@ class SaftyOrder(object):
         plt.show()
 
 
-def prepare_return_values(signal_enter_df, exit_index, price_exit, max_safety_trades_counter, percent,
+def prepare_return_values(signal_enter_df, exit_index, price_exit, max_safety_trades_counter, percent, payed,
                           profit=0,
                           uPNL=0, ):
     return {"Created": signal_enter_df.index[0],
@@ -147,4 +149,5 @@ def prepare_return_values(signal_enter_df, exit_index, price_exit, max_safety_tr
             "max_safety_trades_counter": max_safety_trades_counter,
             "in_Percent": percent,
             "uPNL": uPNL,
-            "Profit": profit}
+            "Profit": profit,
+            "Payed Deal Sum": payed}

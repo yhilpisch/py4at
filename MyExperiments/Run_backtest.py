@@ -54,7 +54,7 @@ def fake_data_test():
 
 
 def backtest():
-    data = get_data_from_file('2019-10-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
+    data = get_data_from_file('2019-03-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
     btc_test = DCABot(data, 0.01)
     btc_test.get_signals()
     kwargs = {"start_base_size": 10,
@@ -73,10 +73,10 @@ def backtest():
 
 
 def back_overfitting():
-    #data = get_data_from_file('2021-10-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
-    data = generate_simpel_sample_momentum()
+    data = get_data_from_file('2021-03-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
+    #data = generate_simpel_sample_momentum()
     btc_test = DCABot(data, 0.01)
-    #btc_test.get_signals()
+    btc_test.get_signals()
     # args
 
     start_base_size = 10
@@ -96,17 +96,20 @@ def back_overfitting():
 
 
 def test_back_overfitting():
-    data = generate_simpel_sample_momentum()
-    lala = SaftyOrder(data, 0.01)
+    data = get_data_from_file('2021-03-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
+    #data = generate_simpel_sample_momentum()
+    btc_test = DCABot(data, 0.01)
+    btc_test.get_signals()
     kwargs = {"start_base_size": 10,
               "safety_order_size": 20,
               "max_active_safety_trades_count": 10,  # uninteresting
               "safety_order_volume_scale": 1.4,
-              "price_deviation": 1,
-              "max_safety_trades_count": 2,
-              "safety_order_step_scale": 1.1}
-    result = lala.calc_times_for_each_signal(kwargs)
-    print(result)
+              "price_deviation": 1.8,
+              "max_safety_trades_count": 13,
+              "safety_order_step_scale": 1}
+    result = btc_test.calc_times_for_each_signal(kwargs)
+    print("Profit Total: " + str(result["Profit"].sum()))
+    print("Deals Total: " + str(len(result)))
     print("End")
 
 
@@ -115,8 +118,8 @@ if __name__ == '__main__':
         # fake_data_test()
         # real_data_test()
         # backtest()
-        back_overfitting()
-        # test_back_overfitting()
+        #back_overfitting()
+        test_back_overfitting()
     except:
         print("Error")
         raise
