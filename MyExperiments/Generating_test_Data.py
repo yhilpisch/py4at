@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 from random import random
 
@@ -44,7 +45,7 @@ def get_data_from_file(start, end, file_name):
     '''
     dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d %H:%M:%S')
     raw = pd.read_csv(
-        '/Users/hans/Documents/Github/GiannisTraidingReserching/MyExperiments/historyCryptoData/' + file_name,
+        os.getcwd()+'/historyCryptoData/' + file_name,
         index_col="date",  # ist wichtig Index muss Datum sein sonst geht raw.loc[ nicht
         parse_dates=True
     ).dropna()

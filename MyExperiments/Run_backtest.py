@@ -1,3 +1,6 @@
+import os
+import time
+
 import numpy as np
 
 from MyExperiments.DCA_bot import DCABot
@@ -36,6 +39,7 @@ def real_data_test():
     result = lala.calc_times_for_each_signal(kwargs)
     print(result)
     print("End")
+    return result
 
 
 def fake_data_test():
@@ -51,6 +55,7 @@ def fake_data_test():
     result = lala.calc_times_for_each_signal(kwargs)
     print(result)
     print("End")
+    return result
 
 
 def backtest():
@@ -70,22 +75,23 @@ def backtest():
     win = result['Profit'].iloc[-1] - result["uPNL"].cumsum().iloc[-1]
     print(result)
     print("End")
+    return result
 
 
 def back_overfitting():
-    data = get_data_from_file('2021-03-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
+    data = get_data_from_file('2019-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
     #data = generate_simpel_sample_momentum()
-    btc_test = DCABot(data, 0.01)
+    btc_test = DCABot(data, 0.015)
     btc_test.get_signals()
     # args
 
     start_base_size = 10
     safety_order_size = 20
     max_active_safety_trades_count = 10  # uninteresting
-    safety_order_volume_scale = (1, 1.5, .1)
+    safety_order_volume_scale = (1, 1.8, .1)
     price_deviation = (1, 2, .1)
-    max_safety_trades_count = (1, 15, 1)
-    safety_order_step_scale = (1, 1.5, .1)
+    max_safety_trades_count = (1, 35, 1)
+    safety_order_step_scale = (1, 1.8, .1)
 
     fix_params = (start_base_size, safety_order_size, max_active_safety_trades_count)
     rranges = (safety_order_volume_scale, price_deviation, max_safety_trades_count, safety_order_step_scale)
@@ -93,10 +99,10 @@ def back_overfitting():
     result = btc_test.optimize_parameters(rranges, fix_params)
     print(result)
     print("end")
-
+    return result
 
 def test_back_overfitting():
-    data = get_data_from_file('2021-03-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
+    data = get_data_from_file('2021-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
     #data = generate_simpel_sample_momentum()
     btc_test = DCABot(data, 0.01)
     btc_test.get_signals()
@@ -104,23 +110,33 @@ def test_back_overfitting():
               "safety_order_size": 20,
               "max_active_safety_trades_count": 10,  # uninteresting
               "safety_order_volume_scale": 1.4,
-              "price_deviation": 1.8,
-              "max_safety_trades_count": 13,
+              "price_deviation": 1,
+              "max_safety_trades_count": 14,
               "safety_order_step_scale": 1}
     result = btc_test.calc_times_for_each_signal(kwargs)
     print("Profit Total: " + str(result["Profit"].sum()))
     print("Deals Total: " + str(len(result)))
     print("End")
+    return result
 
 
 if __name__ == '__main__':
+    t = time.process_time()
+    start = time.time()
     try:
-        # fake_data_test()
-        # real_data_test()
-        # backtest()
-        #back_overfitting()
-        test_back_overfitting()
+        # r=fake_data_test()
+        # r=real_data_test()
+        # r=backtest()
+        #r = back_overfitting()
+        r=test_back_overfitting()
+
+        print(r)
+        print("Done")
     except:
         print("Error")
         raise
+    finally:
+        end = time.time()
+        elapsed_time = time.process_time() - t
+        print("elapsed time: " + str(end - start) + " : " + str(elapsed_time))
 

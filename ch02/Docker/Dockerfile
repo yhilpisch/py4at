@@ -15,7 +15,10 @@ FROM ubuntu:latest  AS builder
 MAINTAINER yves
 
 # add the bash script
-ADD /install.sh /runfolder/
+ADD /x86/install.sh /runfolder/
+#ADD /ARM/install.sh /runfolder/
+#Add envorimente
+ADD ./MyExperiments /runfolder/
 # change rights for the script
 RUN chmod u+x /runfolder/install.sh
 # run the bash script
