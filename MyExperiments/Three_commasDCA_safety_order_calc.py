@@ -88,7 +88,10 @@ class SaftyOrder(object):
                 # Get new average buy price
                 take_profit_price = safety_buys["average_price"].iloc[-1] * (1 + self.take_profit_percent)
                 # Next price
-                scale = (safety_order_step_scale ** max_safety_trades_counter - 1) * 10 * price_deviation
+                if safety_order_step_scale == 1:
+                    scale = price_deviation * (max_safety_trades_counter + 1)
+                else:
+                    scale = (safety_order_step_scale ** (max_safety_trades_counter + 1) - 1) * 10 * price_deviation
                 next_safety_order_price = start_buy_price - scale / 100 * start_buy_price
 
         #  print("Out of chart history")
