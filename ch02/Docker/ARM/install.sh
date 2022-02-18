@@ -31,6 +31,12 @@ conda install -y scipy #from scipy.optimize import brute
 conda install -y pylap #Plotting grafic
 conda install -c conda-forge ta
 
+#Git solution but you need to install git
+#mkdir "trading"
+#cd trading/
+#git clone https://github.com/GianniGithub/GiannisTraidingReserching.git
+#git checkout Mac_arm64
+
 # CUSTOMIZATION
 #cd /root/
 #wget http://hilpisch.com/.vimrc  # Vim configuration

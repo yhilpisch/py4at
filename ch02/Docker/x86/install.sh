@@ -30,7 +30,17 @@ conda install -y ipython  # installs IPython shell
 conda install -y scipy #from scipy.optimize import brute
 conda install -y pylap #Plotting grafic
 conda install -c conda-forge ta
+conda install -c conda-forge matplotlib #Plotter
+conda install -c conda-forge telegram-send
+
 
 # CUSTOMIZATION
-#cd /root/
-#wget http://hilpisch.com/.vimrc  # Vim configuration
+cd ~/ || exit
+wget http://hilpisch.com/.vimrc  # Vim configuration
+
+# telegrambot
+cp /runfolder/config/telegram-send.conf /etc/
+telegram-send -g "Container started"
+
+cd /runfolder || exit
+#OUTPUT=$(python Run_backtest.py); telegram-send -g "${OUTPUT}"

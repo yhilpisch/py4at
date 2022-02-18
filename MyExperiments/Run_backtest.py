@@ -1,8 +1,6 @@
 import os
 import time
 
-import numpy as np
-
 from MyExperiments.DCA_bot import DCABot
 from MyExperiments.Generating_test_Data import generate_simpel_sample_momentum
 from Three_commasDCA_safety_order_calc import *
@@ -127,8 +125,8 @@ if __name__ == '__main__':
         # r=fake_data_test()
         # r=real_data_test()
         # r=backtest()
-        #r = back_overfitting()
-        r=test_back_overfitting()
+        r = back_overfitting()
+        #r=test_back_overfitting()
 
         print(r)
         print("Done")
