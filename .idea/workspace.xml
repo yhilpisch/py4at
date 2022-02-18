@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma try to run on server">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma try with telegrambot">
+      <change afterPath="$PROJECT_DIR$/step_scale.numbers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch02/Docker/ARM/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ch02/Docker/ARM/install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch02/Docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ch02/Docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch02/Docker/x86/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ch02/Docker/x86/install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +38,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="20prj8naXfci99etcyhbCadjwwb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -72,7 +74,7 @@
       <recent name="$PROJECT_DIR$/MyExperiments/historyCryptoData" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile">
+  <component name="RunManager" selected="Python.Run_backtest">
     <configuration name="DCA_bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -210,8 +212,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Docker/Dockerfile" />
         <item itemvalue="Python.Run_backtest" />
+        <item itemvalue="Docker.Docker/Dockerfile" />
         <item itemvalue="Python.DCA_bot" />
         <item itemvalue="Python.format_date_of_csv" />
         <item itemvalue="Python.signals" />
@@ -255,7 +257,8 @@
       <workItem from="1645042639174" duration="201000" />
       <workItem from="1645042874520" duration="4222000" />
       <workItem from="1645053492965" duration="12455000" />
-      <workItem from="1645145338318" duration="12884000" />
+      <workItem from="1645145338318" duration="13823000" />
+      <workItem from="1645200555613" duration="4013000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -397,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645149365646</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="3comma try with telegrambot">
+      <created>1645158737049</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1645158737049</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,6 +425,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ch4 got SMA" />
     <MESSAGE value="Got pandas more" />
     <MESSAGE value="understand growing normilizer and pandas math." />
@@ -435,7 +446,8 @@
     <MESSAGE value="3comma done with profit result" />
     <MESSAGE value="3comma done with real Chart Data" />
     <MESSAGE value="3comma try to run on server" />
-    <option name="LAST_COMMIT_MESSAGE" value="3comma try to run on server" />
+    <MESSAGE value="3comma try with telegrambot" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma try with telegrambot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -449,6 +461,16 @@
           <url>file://$PROJECT_DIR$/MyExperiments/signals.py</url>
           <line>23</line>
           <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MyExperiments/Run_backtest.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/hans/Documents/Github/GiannisTraidingReserching/ch05/05_pyalgo.ipynb</url>
@@ -479,7 +501,7 @@
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$understandRolling.coverage" NAME="understandRolling Coverage Results" MODIFIED="1636760372177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$math_play.coverage" NAME="math_play Coverage Results" MODIFIED="1636988413583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Generating_test_Data.coverage" NAME="Generating_test_Data Coverage Results" MODIFIED="1644457623511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_backtest.coverage" NAME="Run_backtest Coverage Results" MODIFIED="1645148286148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_backtest.coverage" NAME="Run_backtest Coverage Results" MODIFIED="1645210607300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$SMAVectorBacktester.coverage" NAME="SMAVectorBacktester Coverage Results" MODIFIED="1637430786383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$MRVectorBacktester.coverage" NAME="MRVectorBacktester Coverage Results" MODIFIED="1637621261880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$format_date_of_csv.coverage" NAME="format_date_of_csv Coverage Results" MODIFIED="1644896479343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
