@@ -80,7 +80,8 @@ class SaftyOrder(object):
                 quantity = safety_order_size * (
                             safety_order_volume_scale ** max_safety_trades_counter) / next_safety_order_price
                 # collect data
-                safety_buys = safety_buys.append({'vol': quantity, 'price': next_safety_order_price}, ignore_index=True)
+                df_new_row = pd.DataFrame({'vol': quantity, 'price': next_safety_order_price}, index=[0])
+                safety_buys = pd.concat([safety_buys, df_new_row])
                 safety_buys["payed"] = (safety_buys['vol'] * safety_buys['price'])
                 safety_buys["payed_Sum"] = safety_buys["payed"].cumsum()
                 safety_buys["vol_Sum"] = safety_buys["vol"].cumsum()

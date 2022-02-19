@@ -44,11 +44,21 @@ def get_data_from_file(start, end, file_name):
     ''' Retrieves and prepares the row_data.
     '''
     dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d %H:%M:%S')
-    raw = pd.read_csv(
-        os.getcwd()+'/historyCryptoData/' + file_name,
-        index_col="date",  # ist wichtig Index muss Datum sein sonst geht raw.loc[ nicht
-        parse_dates=True
-    ).dropna()
+    try:
+        chart_file = os.getcwd()+'/MyExperiments/historyCryptoData/' + file_name
+        raw = pd.read_csv(
+            chart_file,
+            index_col="date",  # ist wichtig Index muss Datum sein sonst geht raw.loc[ nicht
+            parse_dates=True
+        ).dropna()
+    except:
+        chart_file = '/runfolder/MyExperiments/historyCryptoData/' + file_name
+        raw = pd.read_csv(
+            chart_file,
+            index_col="date",  # ist wichtig Index muss Datum sein sonst geht raw.loc[ nicht
+            parse_dates=True
+        ).dropna()
+
     # upside down
     raw.info()
     raw = raw.reindex(index=raw.index[::-1]).loc[start:end]

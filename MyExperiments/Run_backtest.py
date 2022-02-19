@@ -72,8 +72,8 @@ def run_backtesting_main():
     try:
         print("Calculating...")
         #r=backtest()
-        r = back_overfitting()
-        #r=check_back_overfitting()
+        # = back_overfitting()
+        r=check_back_overfitting()
 
         print(r)
         print("Done--Gianni Rules!!---")
