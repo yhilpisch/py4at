@@ -1,15 +1,11 @@
-import os
 import time
 
+from MyExperiments import Three_commasDCA_safety_order_calc
 from MyExperiments.DCA_bot import DCABot
-from MyExperiments.Generating_test_Data import generate_simpel_sample_momentum
-from Three_commasDCA_safety_order_calc import *
-from scipy.optimize import brute
-import matplotlib.pyplot as plt
 
 
 def backtest():
-    data = get_data_from_file('2019-03-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
+    data = Three_commasDCA_safety_order_calc.get_data_from_file('2019-03-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
     btc_test = DCABot(data, 0.01)
     btc_test.get_signals()
     kwargs = {"start_base_size": 10,
@@ -29,7 +25,7 @@ def backtest():
 
 
 def back_overfitting():
-    data = get_data_from_file('2019-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
+    data = Three_commasDCA_safety_order_calc.get_data_from_file('2019-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
     #data = generate_simpel_sample_momentum()
     btc_test = DCABot(data, 0.015)
     btc_test.get_signals()
@@ -53,7 +49,7 @@ def back_overfitting():
 
 def check_back_overfitting():
     #data = get_data_from_file('2019-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
-    data = generate_simpel_sample_momentum()
+    data = Three_commasDCA_safety_order_calc.generate_simpel_sample_momentum()
     btc_test = DCABot(data, 0.015)
     #btc_test.get_signals()
     kwargs = {"start_base_size": 10,
@@ -70,17 +66,17 @@ def check_back_overfitting():
     return result
 
 
-if __name__ == '__main__':
+def run_backtesting_main():
     t = time.process_time()
     start = time.time()
     try:
-
+        print("Calculating...")
         #r=backtest()
-        #r = back_overfitting()
-        r=check_back_overfitting()
+        r = back_overfitting()
+        #r=check_back_overfitting()
 
         print(r)
-        print("Done")
+        print("Done--Gianni Rules!!---")
     except:
         print("Error")
         raise

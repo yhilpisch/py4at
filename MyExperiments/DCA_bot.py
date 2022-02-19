@@ -6,7 +6,7 @@ from ta.trend import macd_diff
 from ta.utils import dropna
 from scipy import optimize
 
-from Three_commasDCA_safety_order_calc import *
+from MyExperiments.Three_commasDCA_safety_order_calc import *
 
 
 

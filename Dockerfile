@@ -32,4 +32,5 @@ ADD / /runfolder/
 # execute IPython when container is run
 CMD ["ipython"]
 # Run Script
+RUN chmod u+x /runfolder/config/run.sh
 RUN /runfolder/config/run.sh

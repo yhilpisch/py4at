@@ -23,6 +23,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Mi
 bash Miniconda.sh -b  # installs it
 rm -rf Miniconda.sh  # removes the installer
 export PATH="/root/miniconda3/bin:$PATH"  # prepends the new path
+export PYTHONPATH="${PYTHONPATH}:/runfolder/"  # https://towardsdatascience.com/how-to-fix-modulenotfounderror-and-importerror-248ce5b69b1c
 
 # INSTALL PYTHON LIBRARIES
 conda install -y pandas  # installs pandas

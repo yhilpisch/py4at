@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma Unit tests created">
-      <change afterPath="$PROJECT_DIR$/unit_tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit_tests/test_Generating_test_Data.py" afterDir="false" />
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma - Auto created run docker">
+      <change afterPath="$PROJECT_DIR$/main_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GiannisTraidingReserching.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GiannisTraidingReserching.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/DCA_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/DCA_bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit_tests/test_Three_commasDCA_safety_order_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/unit_tests/test_Three_commasDCA_safety_order_calc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/config/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/config/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch02/Docker/x86/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ch02/Docker/x86/install.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,16 +82,13 @@
       <recent name="$PROJECT_DIR$/MyExperiments/historyCryptoData" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Run_backtest">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="Run_backtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -123,6 +124,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="run" type="PythonConfigurationType" factoryName="Python">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,6 +165,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/MyExperiments/config/run.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments/config" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="ARM/Dockerfile: Compose Deployment" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -158,7 +193,8 @@
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="GellosGames">
       <deployment type="dockerfile">
         <settings>
-          <option name="containerName" value="Runny2" />
+          <option name="containerName" value="BTC_BackTest_long" />
+          <option name="commandLineOptions" value="-rm" />
           <option name="sourceFilePath" value="Dockerfile" />
         </settings>
       </deployment>
@@ -213,12 +249,16 @@
       <item itemvalue="Docker.ARM/Dockerfile: Compose Deployment" />
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Python.run" />
+      <item itemvalue="Python.Run_backtest" />
+      <item itemvalue="Python.main_run" />
       <item itemvalue="Python tests.Python tests in test_Generating_test_Data.py" />
       <item itemvalue="Python tests. Run_backtest.py" />
-      <item itemvalue="Python.Run_backtest" />
+      <item itemvalue="Shell Script.run.sh" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_run" />
+        <item itemvalue="Shell Script.run.sh" />
         <item itemvalue="Python.Run_backtest" />
         <item itemvalue="Python tests. Run_backtest.py" />
         <item itemvalue="Python tests.Python tests in test_Generating_test_Data.py" />
@@ -263,7 +303,7 @@
       <workItem from="1645042874520" duration="4222000" />
       <workItem from="1645053492965" duration="12455000" />
       <workItem from="1645145338318" duration="13823000" />
-      <workItem from="1645200555613" duration="18926000" />
+      <workItem from="1645200555613" duration="27570000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -426,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645221519900</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="3comma - Auto created run docker">
+      <created>1645231517174</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1645231517174</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +515,8 @@
     <MESSAGE value="3comma try with telegrambot" />
     <MESSAGE value="3comma fixed price deviation Error" />
     <MESSAGE value="3comma Unit tests created" />
-    <option name="LAST_COMMIT_MESSAGE" value="3comma Unit tests created" />
+    <MESSAGE value="3comma - Auto created run docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma - Auto created run docker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
