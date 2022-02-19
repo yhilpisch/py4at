@@ -16,9 +16,9 @@ MAINTAINER yves
 
 # add the bash script
 ADD ch02/Docker/x86/install.sh /runfolder/
+ADD /MyExperiments/config /runfolder/config
 #ADD /ARM/install.sh /runfolder/
-#Add envorimente
-ADD MyExperiments /runfolder/
+
 # change rights for the script
 RUN chmod u+x /runfolder/install.sh
 # run the bash script
@@ -26,5 +26,10 @@ RUN /runfolder/install.sh
 # prepend the new path
 ENV PATH /root/miniconda3/bin:$PATH
 
+#Add enviroment
+ADD / /runfolder/
+
 # execute IPython when container is run
 CMD ["ipython"]
+# Run Script
+RUN /runfolder/config/run.sh

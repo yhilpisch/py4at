@@ -35,3 +35,4 @@ class TestSaftyOrder(TestCase):
 
         result = self.dca_bot.calc_times_for_each_signal(kwargs)
         self.assertEqual(result["Price_Exit"][0], pytest.approx(expected_price_exit, 0.1) )  # add assertion here
+

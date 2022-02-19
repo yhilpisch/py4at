@@ -7,54 +7,6 @@ from Three_commasDCA_safety_order_calc import *
 from scipy.optimize import brute
 import matplotlib.pyplot as plt
 
-def save_settings():
-    start_base_size = 10
-    safety_order_size = (10, 50)
-    max_active_safety_trades_count = 10  # uninteresting
-    safety_order_volume_scale = (1, 1.5)
-    price_deviation = (1, 10)
-    max_safety_trades_count = (1, 100)
-    safety_order_step_scale = (1, 1.5)
-
-    fix_params = (start_base_size, max_active_safety_trades_count)
-    rranges = (safety_order_size, safety_order_volume_scale,
-            price_deviation, max_safety_trades_count, safety_order_step_scale)
-    # result = btc_test.optimize_parameters(rranges, fix_params)
-
-
-def real_data_test():
-    data = get_data_from_file('2021-10-04', '2022-01-06', "Binance_BTCUSDT_minute.csv")
-    lala = SaftyOrder(data, 0.01)
-    lala.get_signals()
-    lala.plot_results()
-    kwargs = {"start_base_size": 10,
-              "safety_order_size": 20,
-              "max_active_safety_trades_count": 10,  # uninteresting
-              "safety_order_volume_scale": 1.3,
-              "price_deviation": 1,
-              "max_safety_trades_count": 10,
-              "safety_order_step_scale": 1.3}
-    result = lala.calc_times_for_each_signal(kwargs)
-    print(result)
-    print("End")
-    return result
-
-
-def fake_data_test():
-    data = generate_simpel_sample_momentum()
-    lala = SaftyOrder(data, 0.01)
-    kwargs = {"start_base_size": 10,
-              "safety_order_size": 20,
-              "max_active_safety_trades_count": 10,  # uninteresting
-              "safety_order_volume_scale": 1.3,
-              "price_deviation": 2,
-              "max_safety_trades_count": 6,
-              "safety_order_step_scale": 1.1}
-    result = lala.calc_times_for_each_signal(kwargs)
-    print(result)
-    print("End")
-    return result
-
 
 def backtest():
     data = get_data_from_file('2019-03-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
@@ -99,11 +51,11 @@ def back_overfitting():
     print("end")
     return result
 
-def test_back_overfitting():
-    data = get_data_from_file('2019-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
-    #data = generate_simpel_sample_momentum()
+def check_back_overfitting():
+    #data = get_data_from_file('2019-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
+    data = generate_simpel_sample_momentum()
     btc_test = DCABot(data, 0.015)
-    btc_test.get_signals()
+    #btc_test.get_signals()
     kwargs = {"start_base_size": 10,
               "safety_order_size": 20,
               "max_active_safety_trades_count": 10,  # uninteresting
@@ -122,11 +74,10 @@ if __name__ == '__main__':
     t = time.process_time()
     start = time.time()
     try:
-        r=fake_data_test()
-        # r=real_data_test()
-        # r=backtest()
+
+        #r=backtest()
         #r = back_overfitting()
-        #r=test_back_overfitting()
+        r=check_back_overfitting()
 
         print(r)
         print("Done")
