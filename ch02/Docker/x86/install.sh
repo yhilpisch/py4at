@@ -41,7 +41,7 @@ wget http://hilpisch.com/.vimrc  # Vim configuration
 
 # telegrambot
 cp /runfolder/config/telegram-send.conf /etc/
-telegram-send -g "Container started"
+telegram-send -g "image build"
 
 cd /runfolder || exit
 #OUTPUT=$(python Run_backtest.py); telegram-send -g "${OUTPUT}"

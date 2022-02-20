@@ -30,7 +30,8 @@ ENV PATH /root/miniconda3/bin:$PATH
 ADD / /runfolder/
 
 # execute IPython when container is run
-CMD ["ipython"]
+#CMD ["ipython"]
 # Run Script
 RUN chmod u+x /runfolder/config/run.sh
-RUN /runfolder/config/run.sh
+# Run job
+CMD /runfolder/config/run.sh
