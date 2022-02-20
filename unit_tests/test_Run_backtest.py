@@ -19,7 +19,7 @@ class TestRunner(TestCase):
 
     @parameterized.expand([
         [(1, 2, 1), (1, 2, 1), (1, 3, 1), (1, 2, 1), [1, 1, 1, 1], -28.82976],
-        [(1, 1.1, .1), (1, 1.2, .1), (1, 5, 1), (1, 1.2, .1), [1.1, 1.1, 1.0, 1.0], -28.25342],
+        [(1, 1.1, .1), (1, 1.2, .1), (1, 5, 1), (1, 1.2, .1), [1.0, 1.1, 1.0, 1.0], -28.80264],
     ])
     def test_real_back_overfitting(self, safety_order_volume_scale, price_deviation, max_safety_trades_count,
                               safety_order_step_scale, expected_result, expected_amount):
@@ -38,7 +38,7 @@ class TestRunner(TestCase):
 
     @parameterized.expand([
         [(1, 2, 1), (1, 2, 1), (1, 3, 1), (1, 2, 1), [1, 1, 2, 1], 0.5],
-        [(1, 1.1, .1), (1, 1.2, .1), (1, 5, 1), (1, 1.2, .1), [1.1, 1, 4, 1], 1.12102],
+        [(1, 1.1, .1), (1, 1.2, .1), (1, 5, 1), (1, 1.2, .1), [1.1, 1.1, 4, 1], 1.0282],
     ])
     def test_fake_back_overfitting(self, safety_order_volume_scale, price_deviation, max_safety_trades_count,
                               safety_order_step_scale, expected_result, expected_amount):

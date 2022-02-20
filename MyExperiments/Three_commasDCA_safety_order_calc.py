@@ -75,10 +75,10 @@ class SaftyOrder(object):
                 continue
 
             if next_price < next_safety_order_price:
-                max_safety_trades_counter += 1
                 # Buy
                 quantity = safety_order_size * (
                             safety_order_volume_scale ** max_safety_trades_counter) / next_safety_order_price
+                max_safety_trades_counter += 1
                 # collect data
                 df_new_row = pd.DataFrame({'vol': quantity, 'price': next_safety_order_price}, index=[0])
                 safety_buys = pd.concat([safety_buys, df_new_row])

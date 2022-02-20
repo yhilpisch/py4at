@@ -1,5 +1,6 @@
 import time
 
+from MyExperiments.Generating_test_Data import get_data_from_file
 from MyExperiments import Three_commasDCA_safety_order_calc
 from MyExperiments.DCA_bot import DCABot
 
@@ -48,17 +49,17 @@ def back_overfitting():
     return result
 
 def check_back_overfitting():
-    #data = get_data_from_file('2019-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
-    data = Three_commasDCA_safety_order_calc.generate_simpel_sample_momentum()
+    data = get_data_from_file('2019-02-04', '2022-02-13', "Binance_BTCUSDT_1h_format.csv")
+    #data = Three_commasDCA_safety_order_calc.generate_simpel_sample_momentum()
     btc_test = DCABot(data, 0.015)
-    #btc_test.get_signals()
+    btc_test.get_signals()
     kwargs = {"start_base_size": 10,
               "safety_order_size": 20,
               "max_active_safety_trades_count": 10,  # uninteresting
               "safety_order_volume_scale": 1.7,
-              "price_deviation": 1,
-              "max_safety_trades_count": 31,
-              "safety_order_step_scale": 1.1}
+              "price_deviation": 1.,
+              "max_safety_trades_count": 17,
+              "safety_order_step_scale": 1.}
     result = btc_test.calc_times_for_each_signal(kwargs)
     print("Profit Total: " + str(result["Profit"].sum()))
     print("Deals Total: " + str(len(result)))
@@ -72,8 +73,8 @@ def run_backtesting_main():
     try:
         print("Calculating...")
         #r=backtest()
-        r = back_overfitting()
-        #r=check_back_overfitting()
+        #r = back_overfitting()
+        r=check_back_overfitting()
 
         print(r)
         print("Done--Gianni Rules!!---")

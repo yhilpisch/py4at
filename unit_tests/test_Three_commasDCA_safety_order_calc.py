@@ -17,14 +17,15 @@ class TestSaftyOrder(TestCase):
 
 
     @parameterized.expand([
-        [1, 1, 5, 1, 98.21888],
-        [2, 1, 5, 1, 96.81728],
-        [2, 2, 5, 1, 90.67230],
-        [1.1, 1, 6, 1.1, 96.62711],
-        [1.3, 2, 6, 1.1, 93.29389],
+        [1.7, 1, 17, 1, 85.23193, 236335.78911],
+        [1, 1, 5, 1, 98.21888, 110],
+        [2, 1, 5, 1, 96.81728, 630],
+        [2, 2, 5, 1, 92.66732, 630],
+        [1.1, 1, 6, 1.1, 96.62711, 164.31220],
+        [1.3, 2, 6, 1.1, 90.75307, 265.12060],
     ])
     def test_calc_times_for_each_signal(self, safety_order_volume_scale, price_deviation, max_safety_trades_count,
-                                    safety_order_step_scale, expected_price_exit):
+                                    safety_order_step_scale, expected_price_exit, expected_payed_sum):
         kwargs = {"start_base_size": 10,
                   "safety_order_size": 20,
                   "max_active_safety_trades_count": 10,  # uninteresting
@@ -34,5 +35,5 @@ class TestSaftyOrder(TestCase):
                   "safety_order_step_scale": safety_order_step_scale}
 
         result = self.dca_bot.calc_times_for_each_signal(kwargs)
-        self.assertEqual(result["Price_Exit"][0], pytest.approx(expected_price_exit, 0.1) )  # add assertion here
-
+        self.assertEqual(result["Price_Exit"][0], pytest.approx(expected_price_exit, 0.001) )  # add assertion here
+        self.assertEqual(result["Payed Deal Sum"].iloc[-1], pytest.approx(expected_payed_sum, 0.001) )
