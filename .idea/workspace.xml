@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma - create auto generated server with digitalocean and this API">
-      <change afterPath="$PROJECT_DIR$/toDo.rtf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/volume_scale.numbers" afterDir="false" />
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma -bug with volumenscale fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit_tests/test_Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/unit_tests/test_Run_backtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit_tests/test_Three_commasDCA_safety_order_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/unit_tests/test_Three_commasDCA_safety_order_calc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker/Run_docker.py" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/Run_docker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/digitalOcean/Run_Droplet.py" beforeDir="false" afterPath="$PROJECT_DIR$/digitalOcean/Droplet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toDo.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/toDo.rtf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/MyExperiments/config" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -75,13 +72,33 @@
       <recent name="$PROJECT_DIR$/ch02/Docker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/digitalOcean" />
       <recent name="$PROJECT_DIR$/unit_tests" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ch02/Docker/ARM" />
       <recent name="$PROJECT_DIR$/MyExperiments/historyCryptoData" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test_Run_backtest.py">
+  <component name="RunManager" selected="Python.Run_docker">
+    <configuration name="Run_docker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Docker" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Docker/Run_docker.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,28 +113,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main_run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GiannisTraidingReserching" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -158,6 +153,30 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="Docker Image (1)" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker2">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="backtest:latest" />
+          <option name="attachToContainerNeeded" value="true" />
+          <option name="containerName" value="ffff" />
+          <option name="entrypoint" value="/bin/bash" />
+          <option name="commandLineOptions" value="-t" />
+          <option name="showCommandPreview" value="true" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker2">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="backtest:latest" />
+          <option name="attachToContainerNeeded" value="true" />
+          <option name="containerName" value="fffffff" />
+          <option name="showCommandPreview" value="true" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="GellosGames">
       <deployment type="dockerfile">
         <settings>
@@ -168,49 +187,24 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_Run_backtest.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="GiannisTraidingReserching" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/unit_tests/test_Run_backtest.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    <configuration name="dt" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker2">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="backtest:latest" />
+          <option name="containerName" value="dt" />
+          <option name="commandLineOptions" value="-d -t" />
+        </settings>
+      </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_Three_commasDCA_safety_order_calc.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="GiannisTraidingReserching" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/unit_tests/test_Three_commasDCA_safety_order_calc.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests in unit_tests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="GiannisTraidingReserching" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/unit_tests&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    <configuration name="lalal" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker2">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="backtest:latest" />
+          <option name="containerName" value="lalallalalall" />
+          <option name="commandLineOptions" value="-it" />
+        </settings>
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration default="true" type="tests" factoryName="Autodetect">
@@ -228,40 +222,23 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for unit_tests.test_Run_backtest" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="GiannisTraidingReserching" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;unit_tests.test_Run_backtest&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Docker.ARM/Dockerfile: Compose Deployment" />
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Python.run" />
-      <item itemvalue="Python.main_run" />
-      <item itemvalue="Python tests.Python tests in test_Three_commasDCA_safety_order_calc.py" />
-      <item itemvalue="Python tests.Python tests in unit_tests" />
-      <item itemvalue="Python tests.pytest for unit_tests.test_Run_backtest" />
-      <item itemvalue="Python tests.Python tests in test_Run_backtest.py" />
+      <item itemvalue="Python.Run_docker" />
+      <item itemvalue="Docker.lalal" />
+      <item itemvalue="Docker.dt" />
+      <item itemvalue="Docker.Docker Image" />
+      <item itemvalue="Docker.Docker Image (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in test_Run_backtest.py" />
-        <item itemvalue="Python tests.pytest for unit_tests.test_Run_backtest" />
-        <item itemvalue="Python tests.Python tests in unit_tests" />
-        <item itemvalue="Python tests.Python tests in test_Three_commasDCA_safety_order_calc.py" />
-        <item itemvalue="Python.main_run" />
+        <item itemvalue="Python.Run_docker" />
+        <item itemvalue="Docker.Docker Image (1)" />
+        <item itemvalue="Docker.Docker Image" />
+        <item itemvalue="Docker.dt" />
+        <item itemvalue="Docker.lalal" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +284,9 @@
       <workItem from="1645244231951" duration="19888000" />
       <workItem from="1645328317363" duration="4174000" />
       <workItem from="1645370887559" duration="1453000" />
-      <workItem from="1645398298756" duration="2277000" />
+      <workItem from="1645398298756" duration="6434000" />
+      <workItem from="1645404764305" duration="771000" />
+      <workItem from="1645405550270" duration="12410000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -498,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645331945138</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="3comma -bug with volumenscale fixed">
+      <created>1645400683054</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1645400683054</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +503,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="understand growing normilizer and pandas math." />
     <MESSAGE value="Understand chap04" />
     <MESSAGE value="Now able to plot in pycharm" />
     <MESSAGE value="understand Mean Reversion.&#10;add brute to it" />
@@ -542,7 +527,8 @@
     <MESSAGE value="3comma - bug with imports fix, linux runscripts added" />
     <MESSAGE value="3comma - bug with file names fixed on container, test created for runner and fix mith concat and append" />
     <MESSAGE value="3comma - create auto generated server with digitalocean and this API" />
-    <option name="LAST_COMMIT_MESSAGE" value="3comma - create auto generated server with digitalocean and this API" />
+    <MESSAGE value="3comma -bug with volumenscale fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma -bug with volumenscale fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -556,16 +542,6 @@
           <url>file://$PROJECT_DIR$/MyExperiments/signals.py</url>
           <line>23</line>
           <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/digitalOcean/Run_Droplet.py</url>
-          <line>44</line>
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MyExperiments/Run_backtest.py</url>
-          <line>78</line>
-          <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/hans/Documents/Github/GiannisTraidingReserching/ch05/05_pyalgo.ipynb</url>
@@ -593,7 +569,7 @@
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$signals.coverage" NAME="signals Coverage Results" MODIFIED="1644887787170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main_run.coverage" NAME="main_run Coverage Results" MODIFIED="1645371264657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Unittests_for_test_safety_order_calc_TestPriceDeviation_test_SafetyOrder_base_class_0.coverage" NAME="Unittests for test_safety_order_calc.TestPriceDeviation.test_SafetyOrder_base_class_0 Coverage Results" MODIFIED="1645217669842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_tests" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_docker.coverage" NAME="Run_docker Coverage Results" MODIFIED="1645330968389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Docker" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_docker.coverage" NAME="Run_docker Coverage Results" MODIFIED="1645418151912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Docker" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$New_avg_price.coverage" NAME="New_avg_price Coverage Results" MODIFIED="1643994497442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_MyExperiments_test_Run_backtest_TestRunner_test_back_overfitting_0.coverage" NAME="pytest for MyExperiments.test_Run_backtest.TestRunner.test_back_overfitting_0 Coverage Results" MODIFIED="1645293383345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$RunDroplet.coverage" NAME="RunDroplet Coverage Results" MODIFIED="1645324933492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/digitalocean" />
