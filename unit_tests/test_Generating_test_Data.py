@@ -12,7 +12,7 @@ from MyExperiments.Three_commasDCA_safety_order_calc import SaftyOrder
 class TestDataGeneration(TestCase):
     def test_get_data_from_file(self):
 
-        data = get_data_from_file('2021-10-04', '2022-01-06', "Binance_BTCUSDT_minute.csv")
+        data = get_data_from_file('2021-10-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
         lala = SaftyOrder(data, 0.01)
         lala.get_signals()
         lala.plot_results()
