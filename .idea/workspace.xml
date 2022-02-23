@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma -polishing">
-      <change afterPath="$PROJECT_DIR$/unit_tests/test_DCA_bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/DCA_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/DCA_bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit_tests/test_Generating_test_Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/unit_tests/test_Generating_test_Data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit_tests/test_Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/unit_tests/test_Run_backtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit_tests/test_Three_commasDCA_safety_order_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/unit_tests/test_Three_commasDCA_safety_order_calc.py" afterDir="false" />
-    </list>
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma - added capital limit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,8 +67,8 @@
       <recent name="$PROJECT_DIR$/ch02/Docker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/digitalOcean" />
       <recent name="$PROJECT_DIR$/unit_tests" />
+      <recent name="$PROJECT_DIR$/digitalOcean" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ch02/Docker/ARM" />
       <recent name="$PROJECT_DIR$/MyExperiments/historyCryptoData" />
@@ -302,7 +293,7 @@
       <workItem from="1645398298756" duration="6434000" />
       <workItem from="1645404764305" duration="771000" />
       <workItem from="1645405550270" duration="12410000" />
-      <workItem from="1645418385937" duration="15470000" />
+      <workItem from="1645418385937" duration="16072000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -507,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645559633295</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="3comma - added capital limit">
+      <created>1645580260309</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1645580260309</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +524,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Now able to plot in pycharm" />
     <MESSAGE value="understand Mean Reversion.&#10;add brute to it" />
     <MESSAGE value="3comma stragies" />
     <MESSAGE value="3comma Signals setup" />
@@ -551,7 +548,8 @@
     <MESSAGE value="3comma - create auto generated server with digitalocean and this API" />
     <MESSAGE value="3comma -bug with volumenscale fixed" />
     <MESSAGE value="3comma -polishing" />
-    <option name="LAST_COMMIT_MESSAGE" value="3comma -polishing" />
+    <MESSAGE value="3comma - added capital limit" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma - added capital limit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

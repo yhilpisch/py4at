@@ -1,13 +1,15 @@
+import math
+
 from MyExperiments.Generating_test_Data import *
 
 
 class SaftyOrder(object):
 
-    def __init__(self, data, takeProfitProcent, capital_limit):
+    def __init__(self, data, take_profit_percent, capital_limit=math.inf):
         self.capital_limit = capital_limit
         self.signaled_data = data
         self.row_data = data
-        self.take_profit_percent = takeProfitProcent
+        self.take_profit_percent = take_profit_percent
 
     def get_signals(self):
         data = self.row_data.copy().dropna().drop(columns=["unix", "symbol"])  # remove NaN Rows

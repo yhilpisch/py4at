@@ -1,22 +1,18 @@
-import threading
 from queue import Queue
 
-import pandas as pd
+from scipy import optimize
 from ta.trend import macd_diff
 from ta.utils import dropna
-from scipy import optimize
 
 from MyExperiments.Three_commasDCA_safety_order_calc import *
-
-
 
 
 class DCABot(SaftyOrder):
 
     s_result = Queue()
 
-    def __init__(self, data, takeProfitProcent, capital_limit):
-        super().__init__(data, takeProfitProcent, capital_limit)
+    def __init__(self, data, take_profit_percent, capital_limit=math.inf):
+        super().__init__(data, take_profit_percent, capital_limit)
 
 
     def get_signals(self):

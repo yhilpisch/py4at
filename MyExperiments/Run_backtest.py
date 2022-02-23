@@ -1,4 +1,3 @@
-import math
 import time
 
 from MyExperiments.Generating_test_Data import get_data_from_file
@@ -9,7 +8,7 @@ from MyExperiments.DCA_bot import DCABot
 def backtest():
     data = Three_commasDCA_safety_order_calc.get_data_from_file('2019-03-04', '2022-01-06',
                                                                 "Binance_BTCUSDT_1h_format.csv")
-    btc_test = DCABot(data, profit_percent, math.inf)
+    btc_test = DCABot(data, profit_percent)
     btc_test.get_signals()
     kwargs = {"start_base_size": 10,
               "safety_order_size": 20,
