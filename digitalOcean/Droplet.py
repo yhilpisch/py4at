@@ -16,7 +16,7 @@ class Droplet(object):
                                             name='BTC-oBT-long',
                                             region='sfo3',  # https://slugs.do-api.dev
                                             image='docker-20-04',  # https://slugs.do-api.dev
-                                            size_slug='s-1vcpu-1gb',  # https://slugs.do-api.dev
+                                            size_slug='c-2',  # https://slugs.do-api.dev
                                             ssh_keys=keys,
                                             backups=False)
         m = self.droplet.create()
@@ -40,18 +40,28 @@ class Droplet(object):
             # Once it shows "completed", droplet is up and running
             print(action.status)
 
-    def destroy_droplets(self):
-        self.droplet.shutdown()  # cos still costs if it just turned off
+    def destroy_droplet(self):
+        # self.droplet.shutdown()  # cos still costs if it just turned off
         if not self.droplet.destroy():
             raise InterruptedError("Could not destroy Server")
+
+    @staticmethod
+    def destroy_all_droplets():
+        for drop in Droplet.manager.get_all_droplets():
+            if not drop.destroy():
+                raise InterruptedError("Could not destroy Server")
 
     @staticmethod
     def get_all_droplets():
         Droplet.droplets = Droplet.manager.get_all_droplets()
         return Droplet.droplets
 
-# if __name__ == '__main__':
-# droplet = Droplet()
-# droplet.add_SSHKey_into_DigitalOcean_Account()
-# droplet.creating_a_new_droplet_with_all_your_SSH_keys()
-# droplet.checking_the_status_of_the_droplet()
+
+if __name__ == '__main__':
+    ll = Droplet.get_all_droplets()
+
+    #droplet = Droplet()
+    #droplet.droplet = ll[1]
+    Droplet.destroy_all_droplets()
+
+    print("dd")

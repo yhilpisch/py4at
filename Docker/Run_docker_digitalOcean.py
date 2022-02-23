@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import time
 
 import docker
 
@@ -11,8 +12,11 @@ from digitalOcean.Droplet import Droplet
 def set_up_droplet_server():
     new_droplet = Droplet()
     new_droplet.creating_a_new_droplet_with_all_your_SSH_keys()
-    host = new_droplet.droplet.ip_address  # '143.198.239.46'
-    # droplet.Creating_a_new_droplet_with_all_your_SSH_keys()
+    # Wait for creating vServer
+    while new_droplet.droplet.ip_address is None:
+        time.sleep(90)
+
+    print(new_droplet.droplet.ip_address)
     return new_droplet
 
 
@@ -28,16 +32,8 @@ def create_user(server):
                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
         print(result)
 
-
-def shutdown_all_droplets(manager):
-    my_droplets = manager.get_all_droplets()
-    for droplet in my_droplets:
-        droplet.shutdown()
-
-
 def build_docker(drop):
     ssh_client = docker.DockerClient(base_url="ssh://root@{host}".format(host=drop.ip_address))
-    #print(ssh_client.containers.list())
     image, build_logs = ssh_client.images.build(path=sys.path[2], tag='backtest', rm=False)  # Error by: , tag='BTC_BackTest_long_py', rm=False
     for line in build_logs:
         print(line)
@@ -49,10 +45,11 @@ def build_docker(drop):
 
 
 if __name__ == '__main__':
-    drop = set_up_droplet_server()
-    #drop =  Droplet.get_all_droplets()[0]
-    #host = drop.ip_address
-    #build_docker(drop)
+    #drop = set_up_droplet_server()
+    drop =  Droplet.get_all_droplets()[0]
+    print(drop.ip_address)
     #create_user(drop)
+    build_docker(drop)
     print("ee")
+
 
