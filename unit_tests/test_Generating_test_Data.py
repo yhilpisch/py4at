@@ -1,3 +1,4 @@
+import math
 import sys
 from unittest import TestCase
 
@@ -13,7 +14,7 @@ class TestDataGeneration(TestCase):
     def test_get_data_from_file(self):
 
         data = get_data_from_file('2021-10-04', '2022-01-06', "Binance_BTCUSDT_1h_format.csv")
-        lala = SaftyOrder(data, 0.01)
+        lala = SaftyOrder(data, 0.01, math.inf)
         lala.get_signals()
         lala.plot_results()
         kwargs = {"start_base_size": 10,
@@ -24,5 +25,5 @@ class TestDataGeneration(TestCase):
                   "max_safety_trades_count": 10,
                   "safety_order_step_scale": 1.3}
         result = lala.calc_times_for_each_signal(kwargs)
-        self.assertEqual(result["Price_Exit"].iloc[-1], pytest.approx( 47848.14953, 0.1) )  # add assertion here
+        self.assertEqual(result["Price_Exit"].iloc[-1], pytest.approx( 47848.14953, 0.1))  # add assertion here
 

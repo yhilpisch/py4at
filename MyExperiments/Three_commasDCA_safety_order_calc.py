@@ -3,7 +3,8 @@ from MyExperiments.Generating_test_Data import *
 
 class SaftyOrder(object):
 
-    def __init__(self, data, takeProfitProcent):
+    def __init__(self, data, takeProfitProcent, capital_limit):
+        self.capital_limit = capital_limit
         self.signaled_data = data
         self.row_data = data
         self.take_profit_percent = takeProfitProcent
@@ -45,6 +46,7 @@ class SaftyOrder(object):
         #     print(type(row['open']))
 
         # startBuySigRow = SignalEnterIter[0]
+        is_capital_limit_reached = False
         start_buy_price = signal_enter_df.iloc[0]['open']
         start_time = signal_enter_df.iloc[0][0]
         take_profit_price = start_buy_price * (1 + self.take_profit_percent)
@@ -52,7 +54,7 @@ class SaftyOrder(object):
         next_safety_order_price = start_buy_price - (price_deviation / 100 * start_buy_price)
         max_safety_trades_counter = 0
         safety_buys = pd.DataFrame(
-            data={'vol': [quantity], 'price': [start_buy_price], 'payed': [quantity * start_buy_price]})
+            index=[0], data={'vol': [quantity], 'price': [start_buy_price], 'payed': [quantity * start_buy_price]})
         safety_buys["payed_Sum"] = safety_buys["payed"].cumsum()
 
         #for exit_index, candle in signal_enter_df.iloc[1:].df.itertuples():
@@ -74,14 +76,19 @@ class SaftyOrder(object):
             if max_safety_trades_counter >= max_safety_trades_count:
                 continue
 
-            if next_price < next_safety_order_price:
+            if not is_capital_limit_reached and next_price < next_safety_order_price:
                 # Buy
                 quantity = safety_order_size * (
                             safety_order_volume_scale ** max_safety_trades_counter) / next_safety_order_price
+                # check capital limit for this deal
+                if quantity * next_safety_order_price + safety_buys["payed_Sum"].iloc[-1] > self.capital_limit:
+                    is_capital_limit_reached = True
+                    continue
+                    
                 max_safety_trades_counter += 1
                 # collect data
                 df_new_row = pd.DataFrame({'vol': quantity, 'price': next_safety_order_price}, index=[0])
-                safety_buys = pd.concat([safety_buys, df_new_row])
+                safety_buys = pd.concat([safety_buys, df_new_row], ignore_index=True)
                 safety_buys["payed"] = (safety_buys['vol'] * safety_buys['price'])
                 safety_buys["payed_Sum"] = safety_buys["payed"].cumsum()
                 safety_buys["vol_Sum"] = safety_buys["vol"].cumsum()

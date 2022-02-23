@@ -15,8 +15,8 @@ class DCABot(SaftyOrder):
 
     s_result = Queue()
 
-    def __init__(self, data, takeProfitProcent):
-        super().__init__(data, takeProfitProcent)
+    def __init__(self, data, takeProfitProcent, capital_limit):
+        super().__init__(data, takeProfitProcent, capital_limit)
 
 
     def get_signals(self):
