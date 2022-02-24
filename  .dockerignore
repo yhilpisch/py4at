@@ -1,0 +1,10 @@
+# not all
+MyExperiments/historyCryptoData/*
+!MyExperiments/historyCryptoData/Binance_BTCUSDT_1h_format.csv
+
+# ignore token
+digitalOcean
+
+# not needed
+unit_tests
+ch*

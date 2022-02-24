@@ -34,13 +34,13 @@ def back_overfitting():
     btc_test.get_signals()
     # args
 
-    start_base_size = 10
+    start_base_size = 100
     safety_order_size = 20
     max_active_safety_trades_count = 10  # uninteresting
     safety_order_volume_scale = (1, 1.8, .1)
     price_deviation = (1, 2, .1)
-    max_safety_trades_count = (1, 35, 1)
-    safety_order_step_scale = (1, 1.8, .1)
+    max_safety_trades_count = (1, 25, 1)
+    safety_order_step_scale = (1, 1.2, .05)
 
     fix_params = (start_base_size, safety_order_size, max_active_safety_trades_count)
     rranges = (safety_order_volume_scale, price_deviation, max_safety_trades_count, safety_order_step_scale)
@@ -59,9 +59,9 @@ def check_back_overfitting():
     kwargs = {"start_base_size": 10,
               "safety_order_size": 20,
               "max_active_safety_trades_count": 10,  # uninteresting
-              "safety_order_volume_scale": 1.7,
-              "price_deviation": 1.,
-              "max_safety_trades_count": 17,
+              "safety_order_volume_scale": 1.4,
+              "price_deviation": 1.4,
+              "max_safety_trades_count": 9,
               "safety_order_step_scale": 1.}
     result = btc_test.calc_times_for_each_signal(kwargs)
     print("Profit Total: " + str(result["Profit"].sum()))
@@ -70,8 +70,8 @@ def check_back_overfitting():
     return result
 
 
-profit_percent = 0.015
-capital_deal_limit = 2000
+profit_percent = 0.01
+capital_deal_limit = 1100
 
 
 def run_backtesting_main():
@@ -79,9 +79,9 @@ def run_backtesting_main():
     start = time.time()
     try:
         print("Calculating...")
-        # r=backtest()
-        r = back_overfitting()
-        #r = check_back_overfitting()
+
+        #r = back_overfitting()
+        r = check_back_overfitting()
 
         print(r)
         print("Done--Gianni Rules!!---")

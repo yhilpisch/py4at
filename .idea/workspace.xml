@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma - clean tests">
-      <change afterPath="$PROJECT_DIR$/Docker/Run_docker_gellosgames.py" afterDir="false" />
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma - dockers running now also of digitalocean">
+      <change afterPath="$PROJECT_DIR$/ .dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docker/Run_docker.py" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/Run_docker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/digitalOcean/Droplet.py" beforeDir="false" afterPath="$PROJECT_DIR$/digitalOcean/Droplet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch02/Docker/ARM/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/ARM/install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch02/Docker/x86/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/x86/install.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +74,14 @@
       <recent name="$PROJECT_DIR$/ch02/Docker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Docker" />
       <recent name="$PROJECT_DIR$/unit_tests" />
       <recent name="$PROJECT_DIR$/digitalOcean" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ch02/Docker/ARM" />
-      <recent name="$PROJECT_DIR$/MyExperiments/historyCryptoData" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Run_docker_gellosgames">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="Droplet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,7 +104,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Run_docker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Run_backtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/Run_backtest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run_docker_digitalOcean" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,7 +139,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Docker/Run_docker.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Docker/Run_docker_digitalOcean.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,6 +152,9 @@
       <module name="GiannisTraidingReserching" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Docker" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -223,26 +249,11 @@
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="GellosGames">
       <deployment type="dockerfile">
         <settings>
-          <option name="containerName" value="BTCBackTestlong" />
+          <option name="containerName" value="BTCBackTestlong2" />
           <option name="commandLineOptions" value="-rm" />
           <option name="sourceFilePath" value="Dockerfile" />
         </settings>
       </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests in unit_tests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="GiannisTraidingReserching" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/unit_tests&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="tests" factoryName="Autodetect">
@@ -264,19 +275,19 @@
       <item itemvalue="Docker.ARM/Dockerfile: Compose Deployment" />
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Python.run" />
-      <item itemvalue="Python tests.Python tests in unit_tests" />
-      <item itemvalue="Python.Run_docker" />
       <item itemvalue="Python.Droplet" />
       <item itemvalue="Python.main_run" />
       <item itemvalue="Python.Run_docker_gellosgames" />
+      <item itemvalue="Python.Run_docker_digitalOcean" />
+      <item itemvalue="Python.Run_backtest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Run_docker_gellosgames" />
-        <item itemvalue="Python.Droplet" />
         <item itemvalue="Python.main_run" />
-        <item itemvalue="Python.Run_docker" />
-        <item itemvalue="Python tests.Python tests in unit_tests" />
+        <item itemvalue="Python.Run_backtest" />
+        <item itemvalue="Python.Droplet" />
+        <item itemvalue="Python.Run_docker_gellosgames" />
+        <item itemvalue="Python.Run_docker_digitalOcean" />
       </list>
     </recent_temporary>
   </component>
@@ -325,7 +336,8 @@
       <workItem from="1645398298756" duration="6434000" />
       <workItem from="1645404764305" duration="771000" />
       <workItem from="1645405550270" duration="12410000" />
-      <workItem from="1645418385937" duration="23273000" />
+      <workItem from="1645418385937" duration="30809000" />
+      <workItem from="1645670118935" duration="2207000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -544,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645583562147</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="3comma - dockers running now also of digitalocean">
+      <created>1645589948653</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1645589948653</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="3comma stragies" />
     <MESSAGE value="3comma Signals setup" />
     <MESSAGE value="3comma saftyOrder Methode definiert" />
     <MESSAGE value="3comma test system integrated" />
@@ -588,7 +606,8 @@
     <MESSAGE value="3comma -polishing" />
     <MESSAGE value="3comma - added capital limit" />
     <MESSAGE value="3comma - clean tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="3comma - clean tests" />
+    <MESSAGE value="3comma - dockers running now also of digitalocean" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma - dockers running now also of digitalocean" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -604,24 +623,9 @@
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Docker/Run_docker.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="167" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/MyExperiments/Run_backtest.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/digitalOcean/Droplet.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="172" />
+          <line>69</line>
+          <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/hans/Documents/Github/GiannisTraidingReserching/ch05/05_pyalgo.ipynb</url>
@@ -645,14 +649,14 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$MomVectorBacktester.coverage" NAME="MomVectorBacktester Coverage Results" MODIFIED="1637621252032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main_run.coverage" NAME="main_run Coverage Results" MODIFIED="1645588211274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main_run.coverage" NAME="main_run Coverage Results" MODIFIED="1645662967870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Unittests_for_test_safety_order_calc_TestPriceDeviation_test_SafetyOrder_base_class_0.coverage" NAME="Unittests for test_safety_order_calc.TestPriceDeviation.test_SafetyOrder_base_class_0 Coverage Results" MODIFIED="1645217669842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_tests" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_docker.coverage" NAME="Run_docker Coverage Results" MODIFIED="1645586802225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Docker" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_MyExperiments_test_Run_backtest_TestRunner_test_back_overfitting_0.coverage" NAME="pytest for MyExperiments.test_Run_backtest.TestRunner.test_back_overfitting_0 Coverage Results" MODIFIED="1645293383345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_unit_tests_test_Generating_test_Data_TestDataGeneration_test_get_data_from_file.coverage" NAME="pytest for unit_tests.test_Generating_test_Data.TestDataGeneration.test_get_data_from_file Coverage Results" MODIFIED="1645559568941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_Droplet__1_.coverage" NAME="Run_Droplet (1) Coverage Results" MODIFIED="1645331377949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/digitalOcean" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$math_play.coverage" NAME="math_play Coverage Results" MODIFIED="1645488593217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Droplet.coverage" NAME="Droplet Coverage Results" MODIFIED="1645588442903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/digitalOcean" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Droplet.coverage" NAME="Droplet Coverage Results" MODIFIED="1645589863560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/digitalOcean" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$SMAVectorBacktester.coverage" NAME="SMAVectorBacktester Coverage Results" MODIFIED="1637430786383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$MRVectorBacktester.coverage" NAME="MRVectorBacktester Coverage Results" MODIFIED="1637621261880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main.coverage" NAME="main Coverage Results" MODIFIED="1636752624528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
@@ -665,7 +669,7 @@
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$understandRolling.coverage" NAME="understandRolling Coverage Results" MODIFIED="1636760372177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_unit_tests_test_Three_commasDCA_safety_order_calc_TestSaftyOrder.coverage" NAME="pytest for unit_tests.test_Three_commasDCA_safety_order_calc.TestSaftyOrder Coverage Results" MODIFIED="1645228534850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Generating_test_Data.coverage" NAME="Generating_test_Data Coverage Results" MODIFIED="1644457623511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_backtest.coverage" NAME="Run_backtest Coverage Results" MODIFIED="1645371244782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_backtest.coverage" NAME="Run_backtest Coverage Results" MODIFIED="1645643324834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$.coverage" NAME=" Coverage Results" MODIFIED="1645583477236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$format_date_of_csv.coverage" NAME="format_date_of_csv Coverage Results" MODIFIED="1644896479343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$DCA_bot.coverage" NAME="DCA_bot Coverage Results" MODIFIED="1645045709504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />

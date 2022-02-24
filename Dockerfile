@@ -1,12 +1,3 @@
-#
-# Building a Docker Image with
-# the Latest Ubuntu Version and
-# Basic Python Install
-# 
-# Python for Algorithmic Trading
-# (c) Dr. Yves J. Hilpisch
-# The Python Quants GmbH
-#
 
 # latest Ubuntu version
 FROM ubuntu:latest  AS builder
@@ -15,9 +6,9 @@ FROM ubuntu:latest  AS builder
 MAINTAINER yves
 
 # add the bash script
-ADD ch02/Docker/x86/install.sh /runfolder/
+ADD Docker/x86/install.sh /runfolder/
 ADD /MyExperiments/config /runfolder/config
-#ADD /ARM/install.sh /runfolder/
+#ADD Docker/ARM/install.sh /runfolder/
 
 # change rights for the script
 RUN chmod u+x /runfolder/install.sh
