@@ -41,9 +41,6 @@ def generate_simpel_sample_momentum(rows=100, freq='1min') -> pd.DataFrame:
 # print("test")
 
 def get_data_from_file(start, end, file_name):
-    ''' Retrieves and prepares the row_data.
-    '''
-    dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d %H:%M:%S')
     try:
         chart_file = os.getcwd()+'/MyExperiments/historyCryptoData/' + file_name
         raw = pd.read_csv(
@@ -60,6 +57,5 @@ def get_data_from_file(start, end, file_name):
         ).dropna()
 
     # upside down
-    raw.info()
     raw = raw.reindex(index=raw.index[::-1]).loc[start:end]
     return raw

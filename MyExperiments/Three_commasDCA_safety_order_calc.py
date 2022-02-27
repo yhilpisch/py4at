@@ -151,13 +151,18 @@ class SaftyOrder(object):
 def prepare_return_values(signal_enter_df, exit_index, price_exit, max_safety_trades_counter, percent, payed,
                           profit=0,
                           uPNL=0, ):
-    return {"Created": signal_enter_df.index[0],
-            "Exit_Date": signal_enter_df.index[exit_index - 1],
-            "duration": signal_enter_df.index[exit_index - 1] - signal_enter_df.index[0],
-            "Price_Enter": signal_enter_df.iloc[0]['open'],
-            "Price_Exit": price_exit,
-            "max_safety_trades_counter": max_safety_trades_counter,
-            "in_Percent": percent,
-            "uPNL": uPNL,
-            "Profit": profit,
-            "Payed Deal Sum": payed}
+    try:
+        col = {"Created": signal_enter_df.index[0],
+         "Exit_Date": signal_enter_df.index[exit_index - 1],
+         "duration": signal_enter_df.index[exit_index - 1] - signal_enter_df.index[0],
+         "Price_Enter": signal_enter_df.iloc[0]['open'],
+         "Price_Exit": price_exit,
+         "max_safety_trades_counter": max_safety_trades_counter,
+         "in_Percent": percent,
+         "uPNL": uPNL,
+         "Profit": profit,
+         "Payed Deal Sum": payed}
+        return col
+    except TypeError:
+        print("file format error")
+        raise

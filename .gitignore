@@ -111,3 +111,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 /MyExperiments/*
+!/MyExperiments/config/telegram-config.py

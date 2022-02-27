@@ -14,6 +14,13 @@ class DCABot(SaftyOrder):
     def __init__(self, data, take_profit_percent, capital_limit=math.inf):
         super().__init__(data, take_profit_percent, capital_limit)
 
+    def get_signals_general(self):
+        df = dropna(self.row_data)
+        df["macd"] = macd_diff(close=df["close"])
+        c_max = df['macd'].max()
+        c_min = c_max * 0.45
+        buy_signal = df['macd'].map(lambda x: c_min < x < c_max)
+        self.filter_signals(buy_signal, df)
 
     def get_signals(self):
         # Clean NaN values
@@ -21,6 +28,9 @@ class DCABot(SaftyOrder):
 
         df["macd"] = macd_diff(close=df["close"])
         buy_signal = df['macd'].map(lambda x: 60 < x < 69)
+        self.filter_signals(buy_signal, df)
+
+    def filter_signals(self, buy_signal, df):
         # filtering signals, because just one in series is needed
         a = 0
         for i, v in enumerate(buy_signal):
