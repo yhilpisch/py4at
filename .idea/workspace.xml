@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma - add chart data (not in git) clean docker image (add dockerignore)">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma - print telegram from python">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/DCA_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/DCA_bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/config/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/config/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyExperiments/format_date_of_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/format_date_of_csv.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +319,7 @@
       <workItem from="1645405550270" duration="12410000" />
       <workItem from="1645418385937" duration="30809000" />
       <workItem from="1645670118935" duration="2382000" />
-      <workItem from="1645910262252" duration="12241000" />
+      <workItem from="1645910262252" duration="15983000" />
     </task>
     <task id="LOCAL-00001" summary="ch4 got SMA">
       <created>1636761073241</created>
@@ -557,7 +552,21 @@
       <option name="project" value="LOCAL" />
       <updated>1645673889880</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="3comma - testable with other coins now">
+      <created>1645924728082</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1645924728082</updated>
+    </task>
+    <task id="LOCAL-00035" summary="3comma - print telegram from python">
+      <created>1645924812215</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1645924812215</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,8 +588,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="3comma saftyOrder Methode definiert" />
-    <MESSAGE value="3comma test system integrated" />
     <MESSAGE value="3comma tests working" />
     <MESSAGE value="3comma real Data Test working" />
     <MESSAGE value="3comma Signals added" />
@@ -604,7 +611,9 @@
     <MESSAGE value="3comma - clean tests" />
     <MESSAGE value="3comma - dockers running now also of digitalocean" />
     <MESSAGE value="3comma - add chart data (not in git) clean docker image (add dockerignore)" />
-    <option name="LAST_COMMIT_MESSAGE" value="3comma - add chart data (not in git) clean docker image (add dockerignore)" />
+    <MESSAGE value="3comma - testable with other coins now" />
+    <MESSAGE value="3comma - print telegram from python" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma - print telegram from python" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -621,18 +630,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/MyExperiments/telegramBot.py</url>
-          <line>13</line>
+          <line>25</line>
           <option name="timeStamp" value="205" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py</url>
-          <line>166</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MyExperiments/Run_backtest.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/hans/Documents/Github/GiannisTraidingReserching/ch05/05_pyalgo.ipynb</url>
@@ -656,7 +655,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$MomVectorBacktester.coverage" NAME="MomVectorBacktester Coverage Results" MODIFIED="1637621252032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
-    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main_run.coverage" NAME="main_run Coverage Results" MODIFIED="1645923267017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main_run.coverage" NAME="main_run Coverage Results" MODIFIED="1645923649521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Unittests_for_test_safety_order_calc_TestPriceDeviation_test_SafetyOrder_base_class_0.coverage" NAME="Unittests for test_safety_order_calc.TestPriceDeviation.test_SafetyOrder_base_class_0 Coverage Results" MODIFIED="1645217669842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_tests" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_docker.coverage" NAME="Run_docker Coverage Results" MODIFIED="1645586802225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Docker" />
     <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_MyExperiments_test_Run_backtest_TestRunner_test_back_overfitting_0.coverage" NAME="pytest for MyExperiments.test_Run_backtest.TestRunner.test_back_overfitting_0 Coverage Results" MODIFIED="1645293383345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

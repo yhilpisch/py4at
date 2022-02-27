@@ -28,12 +28,11 @@ def backtest():
     return result
 
 
-def back_overfitting():
-    data = Three_commasDCA_safety_order_calc.get_data_from_file('2019-02-04', '2022-02-13',
-                                                                "Binance_BTCUSDT_1h_format.csv")
+def back_overfitting(file_name):
+    data = get_data_from_file('2019-02-04', '2022-02-13', file_name)
     # data = generate_simpel_sample_momentum()
     btc_test = DCABot(data, profit_percent, capital_deal_limit)
-    btc_test.get_signals()
+    btc_test.get_signals_general()
     # args
 
     start_base_size = 100
@@ -47,7 +46,9 @@ def back_overfitting():
     fix_params = (start_base_size, safety_order_size, max_active_safety_trades_count)
     rranges = (safety_order_volume_scale, price_deviation, max_safety_trades_count, safety_order_step_scale)
 
+    tb_print("coin: " + file_name)
     result = btc_test.optimize_parameters(rranges, fix_params)
+    tb_print(str(result))
     return result
 
 
@@ -64,6 +65,7 @@ def check_back_overfitting(file_name):
               "max_safety_trades_count": 9,
               "safety_order_step_scale": 1.}
     result = btc_test.calc_times_for_each_signal(kwargs)
+
     tb_print("coin: " + file_name)
     tb_print("Profit Total: " + str(result["Profit"].sum()))
     tb_print("uPNL Total: " + str(result["uPNL"].sum()))
@@ -83,19 +85,17 @@ def run_backtesting_main():
 
     for path in Path(os.getcwd() + '/MyExperiments/historyCryptoData/').glob("*.csv"):
         try:
-            tb_print("Calculating...")
-            #r = back_overfitting()
-            r = check_back_overfitting(path.name)
-            #tb_print(r)
+            r = back_overfitting(path.name)
+            #r = check_back_overfitting(path.name)
         except:
             tb_print("Error")
             raise
         finally:
             end = time.time()
             elapsed_time = time.process_time() - t
-            tb_print("elapsed time: " + str(end - start) + " : hour " + str(elapsed_time))
-            tb_print("-------------------------------------------------------------------------")
+            tb_print("elapsed time: " + str(end - start) + " : hour " + str(elapsed_time) + "\n" +
+                     "---------------####---------------", flush=True)
 
     end = time.time()
     elapsed_time = time.process_time() - t
-    tb_print("Total elapsed time: " + str(end - start) + " : hour " + str(elapsed_time))
+    tb_print("Total elapsed time: " + str(end - start) + " : hour " + str(elapsed_time), flush=True)
