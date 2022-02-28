@@ -3,6 +3,7 @@ from queue import Queue
 from scipy import optimize
 from ta.trend import macd_diff
 from ta.utils import dropna
+from MyExperiments.telegramBot import send_message as tb_print
 
 from MyExperiments.Three_commasDCA_safety_order_calc import *
 
@@ -13,12 +14,13 @@ class DCABot(SaftyOrder):
 
     def __init__(self, data, take_profit_percent, capital_limit=math.inf):
         super().__init__(data, take_profit_percent, capital_limit)
+        self.signal_amount = 0
 
     def get_signals_general(self):
         df = dropna(self.row_data)
         df["macd"] = macd_diff(close=df["close"])
         c_max = df['macd'].max()
-        c_min = c_max * 0.45
+        c_min = c_max * 0.25
         buy_signal = df['macd'].map(lambda x: c_min < x < c_max)
         self.filter_signals(buy_signal, df)
 
@@ -40,7 +42,8 @@ class DCABot(SaftyOrder):
             if a > 0:
                 buy_signal[i] = False
                 a -= 1
-        print("Signals amount: " + str(buy_signal.sum()))
+        self.signal_amount = buy_signal.sum()
+        tb_print("Signals amount: " + str(self.signal_amount))
         df['buy'] = buy_signal
         self.signaled_data = df
 

@@ -16,7 +16,7 @@ class Droplet(object):
                                             name='BTC-oBT-long',
                                             region='sfo3',  # https://slugs.do-api.dev
                                             image='docker-20-04',  # https://slugs.do-api.dev
-                                            size_slug='c-2',  # https://slugs.do-api.dev
+                                            size_slug='c-32',  # https://slugs.do-api.dev
                                             ssh_keys=keys,
                                             backups=False)
         m = self.droplet.create()

@@ -3,44 +3,27 @@ import time
 from pathlib import Path
 
 from MyExperiments.Generating_test_Data import get_data_from_file
-from MyExperiments import Three_commasDCA_safety_order_calc
 from MyExperiments.DCA_bot import DCABot
 from MyExperiments.telegramBot import send_message as tb_print
 
-def backtest():
-    data = Three_commasDCA_safety_order_calc.get_data_from_file('2019-03-04', '2022-01-06',
-                                                                "Binance_BTCUSDT_1h_format.csv")
-    btc_test = DCABot(data, profit_percent)
-    btc_test.get_signals()
-    kwargs = {"start_base_size": 10,
-              "safety_order_size": 20,
-              "max_active_safety_trades_count": 10,  # uninteresting
-              "safety_order_volume_scale": 1.3,
-              "price_deviation": 1,
-              "max_safety_trades_count": 10,
-              "safety_order_step_scale": 1.3}
-    result = btc_test.calc_times_for_each_signal(kwargs)
-    # btc_test.plot_results()
-    result["sum_profit"] = result["Profit"].cumsum()
-    win = result['Profit'].iloc[-1] - result["uPNL"].cumsum().iloc[-1]
-    print(result)
-    print("End")
-    return result
 
-
-def back_overfitting(file_name):
-    data = get_data_from_file('2019-02-04', '2022-02-13', file_name)
+def back_overfitting(start_date, end_date, file_name):
+    data = get_data_from_file(start_date, end_date, file_name)
     # data = generate_simpel_sample_momentum()
     btc_test = DCABot(data, profit_percent, capital_deal_limit)
     btc_test.get_signals_general()
-    # args
 
+    if btc_test.signal_amount == 0:
+        tb_print("No Signals")
+        return
+
+    # args
     start_base_size = 100
     safety_order_size = 20
     max_active_safety_trades_count = 10  # uninteresting
-    safety_order_volume_scale = (1, 1.8, .1)
+    safety_order_volume_scale = (1, 2.1, .1)
     price_deviation = (1, 2, .1)
-    max_safety_trades_count = (1, 25, 1)
+    max_safety_trades_count = (1, 19, 1)
     safety_order_step_scale = (1, 1.2, .05)
 
     fix_params = (start_base_size, safety_order_size, max_active_safety_trades_count)
@@ -52,19 +35,17 @@ def back_overfitting(file_name):
     return result
 
 
-def check_back_overfitting(file_name):
-    data = get_data_from_file('2019-02-04', '2022-02-13', file_name)
+def check_back_overfitting(start_date, end_date, file_name):
+    data = get_data_from_file(start_date, end_date, file_name)
     # data = Three_commasDCA_safety_order_calc.generate_simpel_sample_momentum()
     btc_test = DCABot(data, profit_percent, capital_deal_limit)
     btc_test.get_signals_general()
-    kwargs = {"start_base_size": 10,
-              "safety_order_size": 20,
-              "max_active_safety_trades_count": 10,  # uninteresting
-              "safety_order_volume_scale": 1.4,
-              "price_deviation": 1.4,
-              "max_safety_trades_count": 9,
-              "safety_order_step_scale": 1.}
-    result = btc_test.calc_times_for_each_signal(kwargs)
+
+    if btc_test.signal_amount == 0:
+        tb_print("No Signals")
+        return
+
+    result = btc_test.calc_times_for_each_signal(overfitting_kwargs)
 
     tb_print("coin: " + file_name)
     tb_print("Profit Total: " + str(result["Profit"].sum()))
@@ -75,18 +56,31 @@ def check_back_overfitting(file_name):
     return result
 
 
+overfitting_kwargs = {"start_base_size": 10,
+                      "safety_order_size": 20,
+                      "max_active_safety_trades_count": 10,  # uninteresting
+                      "safety_order_volume_scale": 1.9,
+                      "price_deviation": 1.8,
+                      "max_safety_trades_count": 4,
+                      "safety_order_step_scale": 1.}
 profit_percent = 0.01
-capital_deal_limit = 1100
+capital_deal_limit = 700
 
 
 def run_backtesting_main():
+    #debug
     t = time.process_time()
     start = time.time()
 
+    date_periods = ('2021-10-04', '2022-02-13')
+    tb_print("Date period: start {start} : end {end}".format(start=date_periods[0], end=date_periods[1]))
+    tb_print("args" + str(overfitting_kwargs))
+    tb_print("---###---####----START----####---###---", flush=True)
+
     for path in Path(os.getcwd() + '/MyExperiments/historyCryptoData/').glob("*.csv"):
         try:
-            r = back_overfitting(path.name)
-            #r = check_back_overfitting(path.name)
+            #r = back_overfitting(*date_periods, path.name)
+            r = check_back_overfitting(*date_periods, path.name)
         except:
             tb_print("Error")
             raise

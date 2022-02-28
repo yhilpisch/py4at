@@ -46,10 +46,11 @@ def build_docker(drop):
 
 if __name__ == '__main__':
     #drop = set_up_droplet_server()
-    drop =  Droplet.get_all_droplets()[0]
+    drop = Droplet.get_all_droplets()[0]
     print(drop.ip_address)
-    #create_user(drop)
+
     build_docker(drop)
-    print("ee")
+    #Droplet.destroy_all_droplets()
+    print("done")
 
 
