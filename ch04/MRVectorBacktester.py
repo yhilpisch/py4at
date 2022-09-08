@@ -19,9 +19,9 @@ class MRVectorBacktester(MomVectorBacktester):
     symbol: str
         RIC symbol with which to work with
     start: str
-        start date for data retrieval
+        start date for row_data retrieval
     end: str
-        end date for data retrieval
+        end date for row_data retrieval
     amount: int, float
         amount to be invested at the beginning
     tc: float
@@ -30,7 +30,7 @@ class MRVectorBacktester(MomVectorBacktester):
     Methods
     =======
     get_data:
-        retrieves and prepares the base data set
+        retrieves and prepares the base row_data set
     run_strategy:
         runs the backtest for the mean reversion-based strategy
     plot_results:
@@ -59,11 +59,10 @@ class MRVectorBacktester(MomVectorBacktester):
         # determine when a trade takes place
         trades = data['position'].diff().fillna(0) != 0
         # subtract transaction costs from return when trade takes place
-        data['strategy'][trades] -= self.tc
-        data['creturns'] = self.amount * \
-            data['return'].cumsum().apply(np.exp)
-        data['cstrategy'] = self.amount * \
-            data['strategy'].cumsum().apply(np.exp)
+        data['strategy'][trades] -= self.tc #second indexer is used as mask only in Pandas (Mask is an boolen Array) # https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html
+        data['money'] = self.amount * data['return']
+        data['creturns'] = self.amount * data['return'].cumsum().apply(np.exp)
+        data['cstrategy'] = self.amount * data['strategy'].cumsum().apply(np.exp)
         self.results = data
         # absolute performance of the strategy
         aperf = self.results['cstrategy'].iloc[-1]
@@ -71,14 +70,25 @@ class MRVectorBacktester(MomVectorBacktester):
         operf = aperf - self.results['creturns'].iloc[-1]
         return round(aperf, 2), round(operf, 2)
 
+    # This does overfitting the stradegy
+    def optimize_parameters(self, *range):
+        opt = brute(self.update_and_run, range, finish=None)
+        return opt, -self.update_and_run(opt)
+
+    def update_and_run(self, SMA):
+        return -self.run_strategy(int(SMA[0]), int(SMA[1]))[0]
+
 
 if __name__ == '__main__':
-    mrbt = MRVectorBacktester('GDX', '2010-1-1', '2020-12-31',
+    """    mrbt = MRVectorBacktester('GDX', '2010-1-1', '2020-12-31',
                               10000, 0.0)
-    print(mrbt.run_strategy(SMA=25, threshold=5))
+    pri£mrbt.run_strategy(SMA=25, threshold=5))
     mrbt = MRVectorBacktester('GDX', '2010-1-1', '2020-12-31',
                               10000, 0.001)
-    print(mrbt.run_strategy(SMA=25, threshold=5))
-    mrbt = MRVectorBacktester('GLD', '2010-1-1', '2020-12-31',
-                              10000, 0.001)
-    print(mrbt.run_strategy(SMA=42, threshold=7.5))
+    print(mrbt.run_strategy(SMA=25, threshold=5))"""
+    mrbt = MRVectorBacktester('GLD', '2010-1-1', '2020-12-31', 10000, 0.001)
+    print("Best: ")
+    print(mrbt.run_strategy(SMA=60, threshold=9.2))
+    print("Best opt: ")
+    # print(mrbt.optimize_parameters((10, 80, 2), (0, 11)))
+    mrbt.plot_results()

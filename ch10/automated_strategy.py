@@ -82,7 +82,7 @@ class MLTrader(tpqoa.tpqoa):
                 self.cols.append(col)
 
     def report_trade(self, pos, order):
-        ''' Prints, logs and sends trade data.
+        ''' Prints, logs and sends trade row_data.
         '''
         out = '\n\n' + 80 * '=' + '\n'
         out += '*** GOING {} *** \n'.format(pos) + '\n'

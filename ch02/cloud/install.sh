@@ -10,13 +10,13 @@
 # The Python Quants GmbH
 #
 # GENERAL LINUX
-apt-get update  # updates the package index cache
+apt-get update  # updates the package exit_index cache
 apt-get upgrade -y  # updates packages
 # install system tools
 apt-get install -y gcc git htop  # system tools
 apt-get install -y screen htop vim wget  # system tools
 apt-get upgrade -y bash  # upgrades bash if necessary
-apt-get clean  # cleans up the package index cache
+apt-get clean  # cleans up the package exit_index cache
 
 # INSTALLING MINICONDA
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
@@ -31,14 +31,14 @@ export PATH="/root/miniconda3/bin:$PATH"
 EOF
 
 # INSTALLING PYTHON LIBRARIES
-conda install -y jupyter  # interactive data analytics in the browser
+conda install -y jupyter  # interactive row_data analytics in the browser
 conda install -y jupyterlab  # Jupyter Lab environment
 conda install -y numpy  #  numerical computing package
 conda install -y pytables  # wrapper for HDF5 binary storage
-conda install -y pandas  #  data analysis package
+conda install -y pandas  #  row_data analysis package
 conda install -y matplotlib  # standard plotting library
 conda install -y seaborn  # statistical plotting library
-conda install -y quandl  # wrapper for Quandl data API
+conda install -y quandl  # wrapper for Quandl row_data API
 conda install -y scikit-learn  # machine learning library
 conda install -y openpyxl  # package for Excel interaction
 conda install -y xlrd xlwt  # packages for Excel interaction

@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="3comma - run more coin overfitting calculation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker/Run_docker_digitalOcean.py" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/Run_docker_digitalOcean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/DCA_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/DCA_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyExperiments/Run_backtest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/digitalOcean/Droplet.py" beforeDir="false" afterPath="$PROJECT_DIR$/digitalOcean/Droplet.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/arrays/datetimelike.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/series.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/indexes/extension.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/dtypes/generic.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/dtypes/base.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/dtypes/dtypes.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/MyExperiments/Generating_test_Data.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/pandas/core/dtypes/common.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/MyExperiments/Three_commasDCA_safety_order_calc.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="20prj8naXfci99etcyhbCadjwwb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowSciView.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/MyExperiments/config/telegram-send.conf&#10;/Users/hans/Documents/Github/GiannisTraidingReserching/MyExperiments/telegramBot.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MyExperiments/config" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MyExperiments/config" />
+      <recent name="$PROJECT_DIR$/unit_tests" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ch02/Docker/x86" />
+      <recent name="$PROJECT_DIR$/ch02/Docker" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Docker" />
+      <recent name="$PROJECT_DIR$/unit_tests" />
+      <recent name="$PROJECT_DIR$/digitalOcean" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ch02/Docker/ARM" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main_run">
+    <configuration name="Droplet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/digitalOcean" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/digitalOcean/Droplet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run_backtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/Run_backtest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run_docker_digitalOcean" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Docker" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Docker/Run_docker_digitalOcean.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="format_date_of_csv" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyExperiments" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyExperiments/format_date_of_csv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ARM/Dockerfile: Compose Deployment" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="pyalgo:basic" />
+          <option name="containerName" value="" />
+          <option name="sourceFilePath" value="ch02/Docker/ARM/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="GellosGames">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="containerName" value="BTCBackTestlong2" />
+          <option name="commandLineOptions" value="-rm" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="GiannisTraidingReserching" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/GiannisTraidingReserching/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.ARM/Dockerfile: Compose Deployment" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Python.run" />
+      <item itemvalue="Python.main_run" />
+      <item itemvalue="Python.format_date_of_csv" />
+      <item itemvalue="Python.Run_backtest" />
+      <item itemvalue="Python.Run_docker_digitalOcean" />
+      <item itemvalue="Python.Droplet" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main_run" />
+        <item itemvalue="Python.Droplet" />
+        <item itemvalue="Python.Run_docker_digitalOcean" />
+        <item itemvalue="Python.Run_backtest" />
+        <item itemvalue="Python.format_date_of_csv" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb698848-49fe-4da8-b7ea-3193c76e874d" name="Changes" comment="" />
+      <created>1636752502682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636752502682</updated>
+      <workItem from="1636752504578" duration="8011000" />
+      <workItem from="1636808531174" duration="2787000" />
+      <workItem from="1636812086102" duration="24907000" />
+      <workItem from="1637007778420" duration="5337000" />
+      <workItem from="1637429759797" duration="17727000" />
+      <workItem from="1637707197128" duration="611000" />
+      <workItem from="1637707834038" duration="5497000" />
+      <workItem from="1637846709203" duration="598000" />
+      <workItem from="1638471988943" duration="1507000" />
+      <workItem from="1638905223985" duration="3621000" />
+      <workItem from="1638998905411" duration="634000" />
+      <workItem from="1639583871683" duration="3263000" />
+      <workItem from="1641589242506" duration="1201000" />
+      <workItem from="1641593572308" duration="599000" />
+      <workItem from="1642795673599" duration="598000" />
+      <workItem from="1643134985037" duration="23167000" />
+      <workItem from="1643894921964" duration="13684000" />
+      <workItem from="1643918513001" duration="5726000" />
+      <workItem from="1643994003503" duration="3069000" />
+      <workItem from="1643997114562" duration="6856000" />
+      <workItem from="1644081909592" duration="16197000" />
+      <workItem from="1644341694766" duration="28269000" />
+      <workItem from="1644868709416" duration="21383000" />
+      <workItem from="1644954737912" duration="12598000" />
+      <workItem from="1644983682576" duration="11868000" />
+      <workItem from="1645041268418" duration="1307000" />
+      <workItem from="1645042639174" duration="201000" />
+      <workItem from="1645042874520" duration="4222000" />
+      <workItem from="1645053492965" duration="12455000" />
+      <workItem from="1645145338318" duration="13823000" />
+      <workItem from="1645200555613" duration="27675000" />
+      <workItem from="1645244231951" duration="19888000" />
+      <workItem from="1645328317363" duration="4174000" />
+      <workItem from="1645370887559" duration="1453000" />
+      <workItem from="1645398298756" duration="6434000" />
+      <workItem from="1645404764305" duration="771000" />
+      <workItem from="1645405550270" duration="12410000" />
+      <workItem from="1645418385937" duration="30809000" />
+      <workItem from="1645670118935" duration="2382000" />
+      <workItem from="1645910262252" duration="15983000" />
+      <workItem from="1645928162271" duration="7090000" />
+      <workItem from="1646004567226" duration="1702000" />
+    </task>
+    <task id="LOCAL-00001" summary="ch4 got SMA">
+      <created>1636761073241</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636761073242</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Got pandas more">
+      <created>1636815154854</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636815154854</updated>
+    </task>
+    <task id="LOCAL-00003" summary="understand growing normilizer and pandas math.">
+      <created>1636841729798</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636841729798</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Understand chap04">
+      <created>1636997703841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636997703841</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Now able to plot in pycharm">
+      <created>1637016801383</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637016801383</updated>
+    </task>
+    <task id="LOCAL-00006" summary="understand Mean Reversion.&#10;add brute to it">
+      <created>1637623781270</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637623781270</updated>
+    </task>
+    <task id="LOCAL-00007" summary="3comma stragies">
+      <created>1643135095749</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1643135095749</updated>
+    </task>
+    <task id="LOCAL-00008" summary="3comma Signals setup">
+      <created>1643162132563</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1643162132563</updated>
+    </task>
+    <task id="LOCAL-00009" summary="3comma saftyOrder Methode definiert">
+      <created>1643924206909</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1643924206909</updated>
+    </task>
+    <task id="LOCAL-00010" summary="3comma test system integrated">
+      <created>1644014590275</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1644014590275</updated>
+    </task>
+    <task id="LOCAL-00011" summary="3comma tests working">
+      <created>1644091776747</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1644091776747</updated>
+    </task>
+    <task id="LOCAL-00012" summary="3comma real Data Test working">
+      <created>1644349382678</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1644349382678</updated>
+    </task>
+    <task id="LOCAL-00013" summary="3comma Signals added">
+      <created>1644461400167</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1644461400167</updated>
+    </task>
+    <task id="LOCAL-00014" summary="3comma Signals now prepared for backtesting">
+      <created>1644874920273</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1644874920274</updated>
+    </task>
+    <task id="LOCAL-00015" summary="3comma backtesting runns, import problem with date fix">
+      <created>1644897392496</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1644897392496</updated>
+    </task>
+    <task id="LOCAL-00016" summary="3comma problem with brute">
+      <created>1645042540113</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1645042540113</updated>
+    </task>
+    <task id="LOCAL-00017" summary="3comma runs only unpickeld">
+      <created>1645045659698</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1645045659698</updated>
+    </task>
+    <task id="LOCAL-00018" summary="3comma done with profit result">
+      <created>1645046973702</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1645046973702</updated>
+    </task>
+    <task id="LOCAL-00019" summary="3comma done with real Chart Data">
+      <created>1645061984973</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1645061984973</updated>
+    </task>
+    <task id="LOCAL-00020" summary="3comma try to run on server">
+      <created>1645149365646</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1645149365646</updated>
+    </task>
+    <task id="LOCAL-00021" summary="3comma try with telegrambot">
+      <created>1645158737049</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1645158737049</updated>
+    </task>
+    <task id="LOCAL-00022" summary="3comma fixed price deviation Error">
+      <created>1645210938425</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1645210938425</updated>
+    </task>
+    <task id="LOCAL-00023" summary="3comma Unit tests created">
+      <created>1645221519900</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1645221519900</updated>
+    </task>
+    <task id="LOCAL-00024" summary="3comma - Auto created run docker">
+      <created>1645231517174</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1645231517174</updated>
+    </task>
+    <task id="LOCAL-00025" summary="3comma - bug with imports fix, linux runscripts added">
+      <created>1645244113077</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1645244113077</updated>
+    </task>
+    <task id="LOCAL-00026" summary="3comma - bug with file names fixed on container, test created for runner and fix mith concat and append">
+      <created>1645297098648</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1645297098648</updated>
+    </task>
+    <task id="LOCAL-00027" summary="3comma - create auto generated server with digitalocean and this API">
+      <created>1645331945138</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1645331945138</updated>
+    </task>
+    <task id="LOCAL-00028" summary="3comma -bug with volumenscale fixed">
+      <created>1645400683054</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1645400683054</updated>
+    </task>
+    <task id="LOCAL-00029" summary="3comma -polishing">
+      <created>1645559633295</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1645559633295</updated>
+    </task>
+    <task id="LOCAL-00030" summary="3comma - added capital limit">
+      <created>1645580260309</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1645580260309</updated>
+    </task>
+    <task id="LOCAL-00031" summary="3comma - clean tests">
+      <created>1645583562147</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1645583562147</updated>
+    </task>
+    <task id="LOCAL-00032" summary="3comma - dockers running now also of digitalocean">
+      <created>1645589948653</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1645589948653</updated>
+    </task>
+    <task id="LOCAL-00033" summary="3comma - add chart data (not in git) clean docker image (add dockerignore)">
+      <created>1645673889880</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1645673889880</updated>
+    </task>
+    <task id="LOCAL-00034" summary="3comma - testable with other coins now">
+      <created>1645924728082</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1645924728082</updated>
+    </task>
+    <task id="LOCAL-00035" summary="3comma - print telegram from python">
+      <created>1645924812215</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1645924812215</updated>
+    </task>
+    <task id="LOCAL-00036" summary="3comma - run more coin overfitting calculation">
+      <created>1645928270206</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1645928270207</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="3comma real Data Test working" />
+    <MESSAGE value="3comma Signals added" />
+    <MESSAGE value="3comma Signals now prepared for backtesting" />
+    <MESSAGE value="3comma backtesting runns, import problem with date fix" />
+    <MESSAGE value="3comma problem with brute" />
+    <MESSAGE value="3comma runs only unpickeld" />
+    <MESSAGE value="3comma done with profit result" />
+    <MESSAGE value="3comma done with real Chart Data" />
+    <MESSAGE value="3comma try to run on server" />
+    <MESSAGE value="3comma try with telegrambot" />
+    <MESSAGE value="3comma fixed price deviation Error" />
+    <MESSAGE value="3comma Unit tests created" />
+    <MESSAGE value="3comma - Auto created run docker" />
+    <MESSAGE value="3comma - bug with imports fix, linux runscripts added" />
+    <MESSAGE value="3comma - bug with file names fixed on container, test created for runner and fix mith concat and append" />
+    <MESSAGE value="3comma - create auto generated server with digitalocean and this API" />
+    <MESSAGE value="3comma -bug with volumenscale fixed" />
+    <MESSAGE value="3comma -polishing" />
+    <MESSAGE value="3comma - added capital limit" />
+    <MESSAGE value="3comma - clean tests" />
+    <MESSAGE value="3comma - dockers running now also of digitalocean" />
+    <MESSAGE value="3comma - add chart data (not in git) clean docker image (add dockerignore)" />
+    <MESSAGE value="3comma - testable with other coins now" />
+    <MESSAGE value="3comma - print telegram from python" />
+    <MESSAGE value="3comma - run more coin overfitting calculation" />
+    <option name="LAST_COMMIT_MESSAGE" value="3comma - run more coin overfitting calculation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ch04/SMAVectorBacktester.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MyExperiments/signals.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MyExperiments/telegramBot.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/hans/Documents/Github/GiannisTraidingReserching/ch05/05_pyalgo.ipynb</url>
+          <line>95</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.data.SMA1" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$MomVectorBacktester.coverage" NAME="MomVectorBacktester Coverage Results" MODIFIED="1637621252032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main_run.coverage" NAME="main_run Coverage Results" MODIFIED="1645988347232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Unittests_for_test_safety_order_calc_TestPriceDeviation_test_SafetyOrder_base_class_0.coverage" NAME="Unittests for test_safety_order_calc.TestPriceDeviation.test_SafetyOrder_base_class_0 Coverage Results" MODIFIED="1645217669842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_tests" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_docker.coverage" NAME="Run_docker Coverage Results" MODIFIED="1645586802225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Docker" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_MyExperiments_test_Run_backtest_TestRunner_test_back_overfitting_0.coverage" NAME="pytest for MyExperiments.test_Run_backtest.TestRunner.test_back_overfitting_0 Coverage Results" MODIFIED="1645293383345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_unit_tests_test_Generating_test_Data_TestDataGeneration_test_get_data_from_file.coverage" NAME="pytest for unit_tests.test_Generating_test_Data.TestDataGeneration.test_get_data_from_file Coverage Results" MODIFIED="1645559568941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_Droplet__1_.coverage" NAME="Run_Droplet (1) Coverage Results" MODIFIED="1645331377949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/digitalOcean" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$math_play.coverage" NAME="math_play Coverage Results" MODIFIED="1645488593217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Droplet.coverage" NAME="Droplet Coverage Results" MODIFIED="1645993903489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/digitalOcean" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$SMAVectorBacktester.coverage" NAME="SMAVectorBacktester Coverage Results" MODIFIED="1637430786383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$MRVectorBacktester.coverage" NAME="MRVectorBacktester Coverage Results" MODIFIED="1637621261880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ch04" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$main.coverage" NAME="main Coverage Results" MODIFIED="1636752624528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_unit_tests_test_Run_backtest.coverage" NAME="pytest for unit_tests.test_Run_backtest Coverage Results" MODIFIED="1645400455131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$optimize.coverage" NAME="optimize Coverage Results" MODIFIED="1637621233789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/.conda/envs/GiannisTraidingReserching/lib/python3.9/site-packages/scipy/optimize" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$signals.coverage" NAME="signals Coverage Results" MODIFIED="1644887787170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$New_avg_price.coverage" NAME="New_avg_price Coverage Results" MODIFIED="1643994497442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$RunDroplet.coverage" NAME="RunDroplet Coverage Results" MODIFIED="1645324933492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/digitalocean" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$3CommasDCA_SaftyOrderCalc.coverage" NAME="3CommasDCA_SaftyOrderCalc Coverage Results" MODIFIED="1644442713084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$understandRolling.coverage" NAME="understandRolling Coverage Results" MODIFIED="1636760372177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$pytest_for_unit_tests_test_Three_commasDCA_safety_order_calc_TestSaftyOrder.coverage" NAME="pytest for unit_tests.test_Three_commasDCA_safety_order_calc.TestSaftyOrder Coverage Results" MODIFIED="1645228534850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Generating_test_Data.coverage" NAME="Generating_test_Data Coverage Results" MODIFIED="1644457623511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$Run_backtest.coverage" NAME="Run_backtest Coverage Results" MODIFIED="1645919654012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$.coverage" NAME=" Coverage Results" MODIFIED="1645914001951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$format_date_of_csv.coverage" NAME="format_date_of_csv Coverage Results" MODIFIED="1645919111977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+    <SUITE FILE_PATH="coverage/GiannisTraidingReserching$DCA_bot.coverage" NAME="DCA_bot Coverage Results" MODIFIED="1645045709504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MyExperiments" />
+  </component>
+</project>

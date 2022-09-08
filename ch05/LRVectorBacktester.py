@@ -9,7 +9,7 @@
 #
 import numpy as np
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 class LRVectorBacktester(object):
     ''' Class for the vectorized backtesting of
@@ -20,9 +20,9 @@ class LRVectorBacktester(object):
     symbol: str
        TR RIC (financial instrument) to work with
     start: str
-        start date for data selection
+        start date for row_data selection
     end: str
-        end date for data selection
+        end date for row_data selection
     amount: int, float
         amount to be invested at the beginning
     tc: float
@@ -31,11 +31,11 @@ class LRVectorBacktester(object):
     Methods
     =======
     get_data:
-        retrieves and prepares the base data set
+        retrieves and prepares the base row_data set
     select_data:
-        selects a sub-set of the data
+        selects a sub-set of the row_data
     prepare_lags:
-        prepares the lagged data for the regression
+        prepares the lagged row_data for the regression
     fit_model:
         implements the regression step
     run_strategy:
@@ -54,7 +54,7 @@ class LRVectorBacktester(object):
         self.get_data()
 
     def get_data(self):
-        ''' Retrieves and prepares the data.
+        ''' Retrieves and prepares the row_data.
         '''
         raw = pd.read_csv('http://hilpisch.com/pyalgo_eikon_eod_data.csv',
                           index_col=0, parse_dates=True).dropna()
@@ -65,14 +65,14 @@ class LRVectorBacktester(object):
         self.data = raw.dropna()
 
     def select_data(self, start, end):
-        ''' Selects sub-sets of the financial data.
+        ''' Selects sub-sets of the financial row_data.
         '''
         data = self.data[(self.data.index >= start) &
                          (self.data.index <= end)].copy()
         return data
 
     def prepare_lags(self, start, end):
-        ''' Prepares the lagged data for the regression and prediction steps.
+        ''' Prepares the lagged row_data for the regression and prediction steps.
         '''
         data = self.select_data(start, end)
         self.cols = []
@@ -122,10 +122,11 @@ class LRVectorBacktester(object):
         compared to the symbol.
         '''
         if self.results is None:
-            print('No results to plot yet. Run a strategy.')
+            print('No signaled_data to plot yet. Run a strategy.')
         title = '%s | TC = %.4f' % (self.symbol, self.tc)
         self.results[['creturns', 'cstrategy']].plot(title=title,
                                                      figsize=(10, 6))
+        plt.show()
 
 
 if __name__ == '__main__':
@@ -134,8 +135,11 @@ if __name__ == '__main__':
                             '2010-1-1', '2019-12-31'))
     print(lrbt.run_strategy('2010-1-1', '2015-12-31',
                             '2016-1-1', '2019-12-31'))
+    lrbt.plot_results()
     lrbt = LRVectorBacktester('GDX', '2010-1-1', '2019-12-31', 10000, 0.001)
     print(lrbt.run_strategy('2010-1-1', '2019-12-31',
                             '2010-1-1', '2019-12-31', lags=5))
+    lrbt.plot_results()
     print(lrbt.run_strategy('2010-1-1', '2016-12-31',
                             '2017-1-1', '2019-12-31', lags=5))
+    lrbt.plot_results()
