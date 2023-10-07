@@ -24,7 +24,7 @@ while True:
     data = socket.recv_string()
     t = datetime.datetime.now()
     sym, value = data.split()
-    df = df.append(pd.DataFrame({sym: float(value)}, index=[t]))
+    df = pd.concat((df, pd.DataFrame({sym: float(value)}, index=[t])))
     dr = df.resample('5s', label='right').last()
     dr['returns'] = np.log(dr / dr.shift(1))
     if len(dr) > min_length:

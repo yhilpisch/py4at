@@ -19,7 +19,10 @@ apt-get clean  # cleans up the package index cache
 
 # INSTALL MINICONDA
 # downloads Miniconda
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda.sh
+# For x86_64
+# wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda.sh
+# For Apple Silicon
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh -O Miniconda.sh
 bash Miniconda.sh -b  # installs it
 rm -rf Miniconda.sh  # removes the installer
 export PATH="/root/miniconda3/bin:$PATH"  # prepends the new path
