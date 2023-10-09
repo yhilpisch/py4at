@@ -27,8 +27,8 @@ class MomentumTrader(tpqoa.tpqoa):
     def on_success(self, time, bid, ask):
         ''' Takes actions when new tick data arrives. '''
         print(self.ticks, end=' ')
-        self.raw_data = self.raw_data.append(pd.DataFrame(
-            {'bid': bid, 'ask': ask}, index=[pd.Timestamp(time)]))
+        self.raw_data = pd.concat((self.raw_data, pd.DataFrame(
+            {'bid': bid, 'ask': ask}, index=[pd.Timestamp(time)])))
         self.data = self.raw_data.resample(
             self.bar_length, label='right').last().ffill().iloc[:-1]
         self.data['mid'] = self.data.mean(axis=1)
